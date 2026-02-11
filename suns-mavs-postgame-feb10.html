@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suns Postgame Dashboard – vs Dallas Mavericks Feb 10, 2026</title>
+
+  <!-- Open Graph / iMessage Preview -->
+  <meta property="og:title" content="Suns 120, Mavericks 111 — Postgame Dashboard">
+  <meta property="og:description" content="Brooks 23 PTS | Booker 19/6 AST | Oso 10-10 double-double | Historic 44-9 FT disparity. Full opponent quotes, media reactions & ownership intelligence inside.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://meltckr.github.io/avc-dashboards/og-suns-mavs-feb10.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://meltckr.github.io/avc-dashboards/suns-mavs-postgame-feb10.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    :root {
+      --bg-dark: #0f0e17;
+      --bg-card: #1a1927;
+      --bg-card-hover: #23212f;
+      --text-primary: #f0f0f8;
+      --text-secondary: #a8a7c0;
+      --text-muted: #7a7a94;
+      --accent-orange: #ff8c42;
+      --accent-purple: #7c5cff;
+      --accent-teal: #00d9ff;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-medium: rgba(255, 255, 255, 0.15);
+      --success: #4ade80;
+      --danger: #ff6b6b;
+      --info: #60a5fa;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 100%; height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      overflow-x: hidden;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0812 0%, #1a0f2e 35%, #2d1b4e 70%, #0f0e17 100%);
+      padding: 16px; padding-bottom: 32px;
+    }
+
+    .container { max-width: 900px; margin: 0 auto; }
+
+    /* AVC LOGO BAR */
+    .avc-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 0; margin-bottom: 16px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .avc-bar .avc-logo-wrap { display: flex; align-items: center; gap: 10px; }
+    .avc-bar .avc-logo-wrap svg { height: 36px; width: auto; }
+    .avc-bar .avc-label {
+      font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--text-muted);
+    }
+    .avc-bar .avc-date {
+      font-size: 11px; color: var(--text-muted);
+    }
+
+    .header { margin-bottom: 24px; }
+
+    .header-top {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; margin-bottom: 8px;
+    }
+
+    .header-title {
+      font-size: 28px; font-weight: 700; letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #ff8c42 0%, #00d9ff 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    .header-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 12px; border: 1px solid var(--border-medium); border-radius: 20px;
+      font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .header-badge.win { background: rgba(74, 222, 128, 0.15); color: var(--success); }
+
+    .header-sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+    .score-bar {
+      display: flex; align-items: center; justify-content: center; gap: 24px;
+      background: var(--bg-card); border: 1px solid var(--border-subtle);
+      border-radius: 12px; padding: 20px; margin-bottom: 24px;
+    }
+    .score-team { text-align: center; }
+    .score-team .name { font-size: 14px; color: var(--text-secondary); margin-bottom: 4px; }
+    .score-team .score { font-size: 42px; font-weight: 700; }
+    .score-team .score.winner { color: var(--success); }
+    .score-team .score.loser { color: var(--text-muted); }
+    .score-vs { font-size: 12px; color: var(--text-muted); text-transform: uppercase; }
+
+    .quarters {
+      display: flex; justify-content: center; gap: 12px; margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .quarter-box {
+      background: var(--bg-card); border: 1px solid var(--border-subtle);
+      border-radius: 8px; padding: 8px 14px; text-align: center; min-width: 60px;
+    }
+    .quarter-box .label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; }
+    .quarter-box .scores { font-size: 13px; margin-top: 2px; }
+
+    .tabs {
+      display: flex; gap: 6px; margin-bottom: 20px; flex-wrap: wrap;
+      border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px;
+    }
+    .tab-button {
+      padding: 8px 16px; border: 1px solid var(--border-subtle); border-radius: 20px;
+      background: transparent; color: var(--text-secondary); font-size: 13px;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .tab-button:hover { background: rgba(255,255,255,0.05); color: var(--text-primary); }
+    .tab-button.active {
+      background: linear-gradient(135deg, var(--accent-orange), var(--accent-purple));
+      color: white; border-color: transparent;
+    }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border-subtle);
+      border-radius: 12px; margin-bottom: 16px; overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: var(--border-medium); }
+
+    .card-header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 20px; cursor: pointer;
+    }
+    .card-header:hover { background: var(--bg-card-hover); }
+    .card-title { font-size: 14px; font-weight: 600; letter-spacing: 0.5px; }
+    .card-subtitle { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+    .expand-icon {
+      font-size: 12px; color: var(--text-muted); transition: transform 0.3s;
+    }
+    .expand-icon.open { transform: rotate(90deg); }
+
+    .card-content {
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+      padding: 0 20px;
+    }
+    .card-content.open { max-height: 3000px; padding: 0 20px 20px; }
+
+    .quote {
+      border-left: 3px solid var(--accent-orange); padding: 12px 16px;
+      margin: 12px 0; background: rgba(255,140,66,0.05); border-radius: 0 8px 8px 0;
+      font-style: italic; font-size: 14px; line-height: 1.7; color: var(--text-primary);
+    }
+    .quote-attribution {
+      font-style: normal; font-size: 11px; color: var(--text-muted); margin-top: 6px;
+    }
+
+    .narrative {
+      font-size: 14px; line-height: 1.7; color: var(--text-secondary);
+      margin: 12px 0; padding: 0 4px;
+    }
+
+    .stat-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px; margin: 12px 0;
+    }
+    .stat-item {
+      background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);
+      border-radius: 8px; padding: 12px; text-align: center;
+    }
+    .stat-item .value { font-size: 20px; font-weight: 700; color: var(--accent-teal); }
+    .stat-item .label { font-size: 10px; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; }
+
+    .box-score-table {
+      width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12px;
+    }
+    .box-score-table th {
+      text-align: left; padding: 8px 6px; font-size: 10px; text-transform: uppercase;
+      color: var(--text-muted); border-bottom: 1px solid var(--border-subtle);
+    }
+    .box-score-table td {
+      padding: 8px 6px; border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+    }
+    .box-score-table td:first-child { color: var(--text-primary); font-weight: 500; }
+    .box-score-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    .team-comparison {
+      display: grid; grid-template-columns: 1fr auto 1fr; gap: 4px; margin: 12px 0;
+    }
+    .team-comparison .stat-label {
+      text-align: center; font-size: 10px; text-transform: uppercase; color: var(--text-muted);
+      padding: 6px 4px;
+    }
+    .team-comparison .stat-val {
+      padding: 6px 8px; font-size: 13px; font-weight: 600; border-radius: 4px;
+    }
+    .team-comparison .stat-val.left { text-align: right; }
+    .team-comparison .stat-val.right { text-align: left; }
+    .team-comparison .stat-val.highlight { color: var(--accent-teal); }
+
+    .footer {
+      text-align: center; margin-top: 40px; padding: 20px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 12px; color: var(--text-muted);
+    }
+    .footer-logo { display: flex; justify-content: center; margin-bottom: 12px; }
+    .footer-logo svg { height: 28px; width: auto; opacity: 0.4; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- AVC LOGO BAR -->
+  <div class="avc-bar">
+    <div class="avc-logo-wrap" style="display:flex;align-items:center;gap:12px;">
+      <svg width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="28" stroke="#60a5fa" stroke-width="1.5" opacity="0.15"/>
+        <circle cx="32" cy="32" r="20" stroke="#60a5fa" stroke-width="2" opacity="0.35"/>
+        <circle cx="32" cy="32" r="13" stroke="#60a5fa" stroke-width="2.5" opacity="0.6"/>
+        <line x1="24" y1="32" x2="43" y2="32" stroke="#93c5fd" stroke-width="3.5" stroke-linecap="round"/>
+        <polyline points="37,25 44,32 37,39" stroke="#93c5fd" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <div style="width:1px;height:24px;background:rgba(96,165,250,0.3);"></div>
+      <div style="display:flex;flex-direction:column;gap:1px;">
+        <span style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#f0f0f8;line-height:1.2;">Accelerated</span>
+        <span style="font-size:10px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;color:#60a5fa;line-height:1.2;">Velocity</span>
+      </div>
+      <span class="avc-label">Ownership Intelligence</span>
+    </div>
+    <div class="avc-date">Feb 11, 2026</div>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="header-title">SUNS POSTGAME DASHBOARD</div>
+      <div class="header-badge win">✓ WIN</div>
+    </div>
+    <div class="header-sub">
+      Phoenix Suns 120, Dallas Mavericks 111 — Feb 10, 2026 · Mortgage Matchup Center, Phoenix · Suns 32-22 (18-9 Home)
+    </div>
+  </div>
+
+  <!-- SCORE BAR -->
+  <div class="score-bar">
+    <div class="score-team">
+      <div class="name">PHX SUNS (32-22)</div>
+      <div class="score winner">120</div>
+    </div>
+    <div class="score-vs">FINAL</div>
+    <div class="score-team">
+      <div class="name">DAL MAVS (19-34)</div>
+      <div class="score loser">111</div>
+    </div>
+  </div>
+
+  <!-- QUARTERS -->
+  <div class="quarters">
+    <div class="quarter-box"><div class="label">Q1</div><div class="scores">36-16</div></div>
+    <div class="quarter-box"><div class="label">Q2</div><div class="scores">29-32</div></div>
+    <div class="quarter-box"><div class="label">Q3</div><div class="scores">31-27</div></div>
+    <div class="quarter-box"><div class="label">Q4</div><div class="scores">24-36</div></div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab-button active" onclick="showTab(event,'overview')">Overview</button>
+    <button class="tab-button" onclick="showTab(event,'box')">Box Score</button>
+    <button class="tab-button" onclick="showTab(event,'suns')">Suns Quotes</button>
+    <button class="tab-button" onclick="showTab(event,'mavs')">Mavs Context</button>
+    <button class="tab-button" onclick="showTab(event,'reactions')">Reactions</button>
+    <button class="tab-button" onclick="showTab(event,'themes')">Key Themes</button>
+    <button class="tab-button" onclick="showTab(event,'next')">Next Game</button>
+  </div>
+
+  <!-- OVERVIEW TAB -->
+  <div id="overview" class="tab-content active">
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">GAME SUMMARY</div>
+          <div class="card-subtitle">Suns dominate early, hold off late Mavs rally</div>
+        </div>
+        <div class="expand-icon open">▶</div>
+      </div>
+      <div class="card-content open">
+        <div class="narrative">
+          The Suns took control early with a 36-16 first quarter, building a lead that swelled to 31 points at 61-30. Dillon Brooks led Phoenix with 23 points while Devin Booker added 19 with 6 assists as the floor general. Despite a furious fourth-quarter rally by Dallas — outscoring Phoenix 36-24 and cutting the lead to 6 at 115-109 with 2:09 left — Booker sealed it with a mid-range jumper and a pullup jumper in the final two minutes. Phoenix never trailed after Booker's turnaround jumper made it 2-1 with 10:01 left in the first quarter.
+        </div>
+        <div class="stat-grid">
+          <div class="stat-item"><div class="value">31</div><div class="label">Biggest Lead</div></div>
+          <div class="stat-item"><div class="value">32</div><div class="label">Assists</div></div>
+          <div class="stat-item"><div class="value">48</div><div class="label">Bench Pts</div></div>
+          <div class="stat-item"><div class="value">16</div><div class="label">Threes Made</div></div>
+          <div class="stat-item"><div class="value">56</div><div class="label">Rebounds</div></div>
+          <div class="stat-item"><div class="value">24</div><div class="label">2nd Chance Pts</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">KEY PERFORMERS</div>
+          <div class="card-subtitle">Brooks leads scoring, Oso posts double-double</div>
+        </div>
+        <div class="expand-icon">▶</div>
+      </div>
+      <div class="card-content">
+        <div class="narrative">
+          <strong>Dillon Brooks (23 pts, 4 reb)</strong> — Led the team in scoring with relentless two-way play. Went 10-16 on twos but struggled from deep at 1-10 from three.<br><br>
+          <strong>Devin Booker (19 pts, 6 ast, 4 reb)</strong> — Controlled the game as floor general. Made the clutch mid-range jumper with 1:50 left to ice the comeback attempt. Shot 3-7 from three — a bounce-back from the Philly loss.<br><br>
+          <strong>Mark Williams (13 pts, 9 reb)</strong> — Dominant 6-7 shooting from the field. Owned the paint alongside Ighodaro.<br><br>
+          <strong>Oso Ighodaro (10 pts, 10 reb, 4 ast, 2 blk)</strong> — Double-double on 5-6 shooting. Controlled the glass with 6 offensive boards and anchored the defense with 2 blocks.<br><br>
+          <strong>Ryan Dunn (12 pts, 4-5 FG)</strong> — Hyper-efficient off the bench. 2-3 from three, 2-2 from the line.<br><br>
+          <strong>Collin Gillespie (5 pts, 8 reb, 8 ast)</strong> — Near triple-double. The engine of the offense with 8 assists despite a cold shooting night (2-7).<br><br>
+          <strong>Royce O'Neale (12 pts, 4-7 3PT)</strong> — Caught fire from deep. 4-7 from three provided the spacing Phoenix needed.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">TEAM COMPARISON</div>
+          <div class="card-subtitle">PHX vs DAL head-to-head stats</div>
+        </div>
+        <div class="expand-icon">▶</div>
+      </div>
+      <div class="card-content">
+        <div class="team-comparison">
+          <div class="stat-val left">48.0%</div><div class="stat-label">FG%</div><div class="stat-val right">48.1%</div>
+          <div class="stat-val left highlight">32.0%</div><div class="stat-label">3PT%</div><div class="stat-val right">22.7%</div>
+          <div class="stat-val left">66.7%</div><div class="stat-label">FT%</div><div class="stat-val right highlight">72.7%</div>
+          <div class="stat-val left highlight">56</div><div class="stat-label">REB</div><div class="stat-val right">53</div>
+          <div class="stat-val left highlight">32</div><div class="stat-label">AST</div><div class="stat-val right">18</div>
+          <div class="stat-val left highlight">8</div><div class="stat-label">STL</div><div class="stat-val right">7</div>
+          <div class="stat-val left highlight">14</div><div class="stat-label">TO</div><div class="stat-val right">16</div>
+          <div class="stat-val left">44</div><div class="stat-label">PTS IN PAINT</div><div class="stat-val right highlight">52</div>
+          <div class="stat-val left">10</div><div class="stat-label">FAST BRK</div><div class="stat-val right highlight">26</div>
+          <div class="stat-val left">6-9</div><div class="stat-label">FT (M-A)</div><div class="stat-val right highlight">32-44</div>
+          <div class="stat-val left highlight">24</div><div class="stat-label">2ND CHANCE</div><div class="stat-val right">13</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOX SCORE TAB -->
+  <div id="box" class="tab-content">
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">SUNS BOX SCORE</div>
+          <div class="card-subtitle">Key players · 8 players scored</div>
+        </div>
+        <div class="expand-icon open">▶</div>
+      </div>
+      <div class="card-content open">
+        <div style="overflow-x:auto;">
+          <table class="box-score-table">
+            <thead><tr><th>Player</th><th>PTS</th><th>REB</th><th>AST</th><th>STL</th><th>BLK</th><th>FG</th><th>3PT</th><th>FT</th></tr></thead>
+            <tbody>
+              <tr><td>D. Brooks (F)</td><td><strong>23</strong></td><td>4</td><td>1</td><td>0</td><td>0</td><td>11-26</td><td>1-10</td><td>0-0</td></tr>
+              <tr><td>D. Booker (G)</td><td><strong>19</strong></td><td>4</td><td>6</td><td>2</td><td>0</td><td>7-16</td><td>3-7</td><td>2-3</td></tr>
+              <tr><td>M. Williams (C)</td><td><strong>13</strong></td><td>9</td><td>1</td><td>0</td><td>0</td><td>6-7</td><td>0-0</td><td>1-2</td></tr>
+              <tr><td>R. O'Neale (F)</td><td><strong>12</strong></td><td>4</td><td>2</td><td>2</td><td>0</td><td>4-8</td><td>4-7</td><td>0-0</td></tr>
+              <tr><td>R. Dunn (F)</td><td><strong>12</strong></td><td>4</td><td>2</td><td>0</td><td>0</td><td>4-5</td><td>2-3</td><td>2-2</td></tr>
+              <tr><td>O. Ighodaro (F)</td><td><strong>10</strong></td><td>10</td><td>4</td><td>0</td><td>2</td><td>5-6</td><td>0-0</td><td>0-0</td></tr>
+              <tr><td>J. Goodwin (G)</td><td><strong>8</strong></td><td>3</td><td>3</td><td>2</td><td>1</td><td>3-10</td><td>2-8</td><td>0-0</td></tr>
+              <tr><td>C. Gillespie (G)</td><td><strong>5</strong></td><td>8</td><td>8</td><td>1</td><td>0</td><td>2-7</td><td>1-5</td><td>0-0</td></tr>
+              <tr><td>A. Coffey (G/F)</td><td><strong>6</strong></td><td>2</td><td>1</td><td>1</td><td>0</td><td>2-3</td><td>1-2</td><td>1-2</td></tr>
+              <tr><td>J. Green (G)</td><td><strong>12</strong></td><td>1</td><td>4</td><td>0</td><td>0</td><td>5-14</td><td>2-8</td><td>0-0</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">MAVERICKS BOX SCORE</div>
+          <div class="card-subtitle">Key players · Marshall 31, Flagg 27, Middleton 13</div>
+        </div>
+        <div class="expand-icon">▶</div>
+      </div>
+      <div class="card-content">
+        <div style="overflow-x:auto;">
+          <table class="box-score-table">
+            <thead><tr><th>Player</th><th>PTS</th><th>REB</th><th>AST</th><th>STL</th><th>BLK</th><th>FG</th><th>3PT</th><th>FT</th></tr></thead>
+            <tbody>
+              <tr><td>N. Marshall (F)</td><td><strong>31</strong></td><td>4</td><td>2</td><td>1</td><td>0</td><td>12-17</td><td>2-4</td><td>5-7</td></tr>
+              <tr><td>C. Flagg (F)</td><td><strong>27</strong></td><td>5</td><td>2</td><td>1</td><td>0</td><td>8-20</td><td>0-1</td><td>11-14</td></tr>
+              <tr><td>P.J. Washington (F)</td><td><strong>13</strong></td><td>5</td><td>1</td><td>0</td><td>0</td><td>4-9</td><td>2-6</td><td>3-5</td></tr>
+              <tr><td>M. Bagley III (F)</td><td><strong>9</strong></td><td>8</td><td>2</td><td>0</td><td>0</td><td>4-4</td><td>0-0</td><td>1-4</td></tr>
+              <tr><td>K. Middleton (F)</td><td><strong>13</strong></td><td>5</td><td>2</td><td>0</td><td>0</td><td>2-5</td><td>1-2</td><td>8-9</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUNS QUOTES TAB -->
+  <div id="suns" class="tab-content">
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">HEAD COACH — JORDAN OTT</div>
+          <div class="card-subtitle">Free throw discrepancy, Green's return, rim attacks</div>
+        </div>
+        <div class="expand-icon">▶</div>
+      </div>
+      <div class="card-content">
+        <div class="narrative">
+          Ott addressed the free throw discrepancy postgame — Phoenix shot just 6-of-9 from the line while Dallas went 32-of-44 — yet the Suns still won by 9. The Suns committed 27 personal fouls vs Dallas' 12, a theme Ott acknowledged. He also discussed Jalen Green's emotional return from injury, expressing excitement about having Green's speed and dribble-drive ability back in the rotation.
+        </div>
+        <div class="quote">
+          "A lot were catch-and-shoot from our best shooters. Almost as high-quality as you can get from really good shooters. But it's a recurring thing. We got to get to the rim. We love 3s, but we love getting to the rim, too, and all that does to your offense. The rim is still more valuable."
+          <div class="quote-attribution">On offensive shot diet and getting to the rim (recurring theme from Philly postgame)</div>
+        </div>
+        <div class="quote">
+          "Full of talent, full of youthful energy we need. His speed. His ability to attack off the dribble. We need him, but we need him healthy."
+          <div class="quote-attribution">On Jalen Green's return and importance to the team</div>
+        </div>
+        <div class="quote">
+          "We wanted Dillon. I envisioned him from a cultural perspective, a leadership perspective and an impact perspective at a really high level. He's been even better than expected."
+          <div class="quote-attribution">On Dillon Brooks' impact (via ESPN feature)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">DILLON BROOKS | F</div>
+          <div class="card-subtitle">23 PTS • 4 REB • 11-26 FG • Team-high scorer</div>
+        </div>
+        <div class="expand-icon">▶</div>
+      </div>
+      <div class="card-content">
+        <div class="narrative">
+          Brooks continued his role as the Suns' emotional engine, leading the team with 23 points. His two-point shooting was strong (10-16) though the three-ball wasn't falling (1-10). His ball-screen actions with Gillespie and Goodwin continue to exploit smaller defenders — a schematic wrinkle that keeps Phoenix's offense dynamic.
+        </div>
+        <div class="quote">
+          "I felt like a lot of people counted me out, thinking I was just going to wash away with the rest of NBA players that had their shine and then were not able to figure out how to evolve and be able to stay in this league. I didn't want to fall off."
+          <div class="quote-attribution">On his career resurgence (via ESPN feature)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">DEVIN BOOKER | G</div>
+          <div class="card-subtitle">19 PTS • 6 AST • 4 REB • Clutch buckets</div>
+        </div>
+        <div class="expand-icon">▶</div>
+      </div>
+      <div class="card-content">
+        <div class="narrative">
+          Booker controlled the tempo as floor general with 6 assists, then delivered clutch mid-range shots down the stretch to kill Dallas' comeback. His turnaround jumper at 10:01 in Q1 gave Phoenix a lead they never relinquished. Shot 3-7 from three — a significant improvement from the Philly loss.
+        </div>
+        <div class="quote">
+          "Keep shooting. We have good shooters that space the floor very well. We encourage everybody to keep letting it fly around here, and a majority of the nights aren't going to look like (this)."
+          <div class="quote-attribution">On maintaining shooting confidence after recent struggles</div>
+        </div>
+        <div class="narrative">
+          Booker has been named to the <strong>3-Point Contest at All-Star Weekend</strong> — a signal of his confidence and role in Phoenix's spacing-heavy scheme.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">AMIR COFFEY | G/F (SUNS DEBUT)</div>
+          <div class="card-subtitle">6 PTS • 2 REB • 1 AST • 1 STL — Trade deadline acquisition</div>
+        </div>
+        <div class="expand-icon">▶</div>
+      </div>
+      <div class="card-content">
+        <div class="quote">
+          "I got a lot of stuff to learn, a lot of stuff to go over, but at the end of the day, you still got to do your job. So, that stuff will come. But still got to go out and compete."
+          <div class="quote-attribution">On adjusting to the Suns' system in his first game</div>
+        </div>
+        <div class="narrative">
+          Coffey, acquired from the Milwaukee Bucks at the trade deadline, slotted in comfortably in his debut. He picked up 4 fouls adjusting to the Suns' defensive schemes but showed the shooting, defense, and versatility that the front office and Ott have prioritized. The All-Star break gives him time to absorb the playbook.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">OSO IGHODARO | F</div>
+          <div class="card-subtitle">10 PTS • 10 REB • 4 AST • 2 BLK — Double-double</div>
+        </div>
+        <div class="expand-icon">▶</div>
+      </div>
+      <div class="card-content">
+        <div class="narrative">
+          Ighodaro was the unsung hero of this win. His 10-10 double-double on 5-6 shooting anchored the frontcourt alongside Mark Williams. Six offensive rebounds generated second-chance opportunities (24 second-chance points as a team), and his 4 assists showed off his playmaking from the high post. Two blocks on the defensive end completed the all-around stat line.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">COLLIN GILLESPIE | G</div>
+          <div class="card-subtitle">5 PTS • 8 REB • 8 AST — Near triple-double</div>
+        </div>
+        <div class="expand-icon">▶</div>
+      </div>
+      <div class="card-content">
+        <div class="narrative">
+          Gillespie's box score doesn't scream, but his 8 assists and 8 rebounds tell the story. He was the connective tissue of the offense, finding cutters and generating the ball movement (32 team assists) that powered the first-half blowout. The shot wasn't falling (2-7) but his impact was undeniable.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">JALEN GREEN | G</div>
+          <div class="card-subtitle">Return from hamstring injury</div>
+        </div>
+        <div class="expand-icon">▶</div>
+      </div>
+      <div class="card-content">
+        <div class="narrative">
+          Green returned to the rotation after missing time with a hamstring injury. He spoke emotionally postgame about the frustration of being sidelined and the excitement of being back on the court. Ott praised Green's speed and dribble-drive ability, underscoring his importance to the rotation heading into the All-Star break.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAVS CONTEXT TAB -->
+  <div id="mavs" class="tab-content">
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">DALLAS CONTEXT</div>
+          <div class="card-subtitle">8-game losing streak • Post-deadline rebuild</div>
+        </div>
+        <div class="expand-icon open">▶</div>
+      </div>
+      <div class="card-content open">
+        <div class="narrative">
+          Dallas is in full rebuild mode after trading Anthony Davis to Washington at the deadline. The Mavericks are building around Rookie of the Year candidate <strong>Cooper Flagg</strong>, who had 27 points on aggressive drives to the rim (11-14 FT). <strong>Naji Marshall</strong> led all scorers with 31 on ultra-efficient 12-17 shooting, and new acquisition <strong>Marvin Bagley III</strong> contributed 9 points and 8 rebounds off the bench (4-4 FG).
+        </div>
+        <div class="narrative">
+          Despite the 8-game skid (longest since 2016), Dallas showed fight in the fourth quarter, outscoring Phoenix 36-24 and cutting a 31-point deficit to just 6. The Mavs' 32-44 free throw volume (vs Phoenix's 6-9) reflects their aggressive downhill style, particularly through Flagg and Marshall. Dallas hasn't won since beating Golden State at home on Jan. 22.
+        </div>
+        <div class="narrative">
+          <strong>Flagg Watch:</strong> In his first 12 career games, the first overall pick averaged 15.1 points on 42.1% from the field. Since then, he's averaged 22.0 points per game on 50.1% shooting, including 33.0 points per game in his last five. At 6'9" with elite rim pressure, he profiles as a franchise cornerstone. The Suns' defensive approach — Brooks as primary, Dunn in spot minutes — will be a playoff-relevant schematic question.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPPONENT & MEDIA REACTION TAB -->
+  <div id="reactions" class="tab-content">
+
+    <!-- DALLAS COACHING STAFF -->
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">🎙️ DALLAS COACHING STAFF</div>
+          <div class="card-subtitle">Jason Kidd postgame press conference</div>
+        </div>
+        <div class="expand-icon open">▶</div>
+      </div>
+      <div class="card-content open">
+        <div class="narrative">
+          <strong>Jason Kidd on the loss:</strong> "The physicality, they were physical and we weren't in that first half. I thought the group did a better job there in the second half. We cut the lead. We had some good looks that just hit back rim. We got off to a slow start. Getting to the free throw line was a big thing for us tonight — 44 times. We gotta be able to produce more 3s. We just didn't do that. The group fought."
+        </div>
+        <div class="narrative">
+          <strong>Kidd on Flagg and Marshall:</strong> "Those two have been playing well for us here, and we asked Naji to come off the bench, and it didn't change his mentality. He played well tonight."
+        </div>
+        <div class="narrative">
+          <strong>Kidd on Khris Middleton's addition:</strong> "Playmaking through Gaff a lot — something that we have missed. His pick and roll, being able to do that. He can shoot the ball. But just the defense, his ability to understand what teams are trying to do, he helped us defensively down the stretch."
+        </div>
+        <div class="narrative" style="margin-top:8px;padding:10px 14px;background:rgba(255,140,66,0.08);border-left:3px solid var(--accent-orange);border-radius:6px;">
+          <strong style="color:var(--accent-orange);">📌 Ownership Note:</strong> Kidd acknowledged the Suns' first-half physicality as the decisive factor. His emphasis on free throw volume (44 attempts) but inability to win despite it reinforces the narrative that the "ethical tank" limits how hard Dallas competes late. Middleton's defensive IQ was specifically praised — worth monitoring as a Flagg support piece if Dallas builds around the pick.
+        </div>
+      </div>
+    </div>
+
+    <!-- DALLAS PLAYERS -->
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">🏀 DALLAS PLAYER QUOTES</div>
+          <div class="card-subtitle">Flagg, Marshall, Coffey postgame</div>
+        </div>
+        <div class="expand-icon">▶</div>
+      </div>
+      <div class="card-content">
+        <div class="narrative">
+          <strong>Cooper Flagg:</strong> "I was aggressive. Getting downhill to my spots, trying to play with physicality and I was rewarded with getting to the free-throw line. I thought that was good."
+        </div>
+        <div class="narrative">
+          <strong>Naji Marshall:</strong> No postgame quotes available from Feb. 10 media session. Marshall came off the bench per Kidd's request and responded with a team-high 31 points on 12-17 shooting. Kidd noted: "We asked Naji to come off the bench, and it didn't change his mentality. He played well tonight."
+        </div>
+        <div class="narrative">
+          <strong>Amir Coffey (Suns debut):</strong> "I got a lot of stuff to learn, a lot of stuff to go over, but at the end of the day, you still got to do your job. So, that stuff will come. But still got to go out and compete."
+        </div>
+        <div class="narrative" style="margin-top:8px;padding:10px 14px;background:rgba(255,140,66,0.08);border-left:3px solid var(--accent-orange);border-radius:6px;">
+          <strong style="color:var(--accent-orange);">📌 Ownership Note:</strong> Flagg's postgame was notably composed for a teenager. His aggression vs. Brooks (11-14 FT, plus the poster dunk) signals confidence against veteran defenders. Marshall's 31-point bench explosion on 12-17 shooting shows Dallas has dangerous secondary scoring even in tank mode. Coffey's debut (6 pts, 2-3 FG, 13 min) was solid but cautious — 4 fouls suggest he's still learning Suns' defensive schemes. The All-Star break gives him time to integrate.
+        </div>
+      </div>
+    </div>
+
+    <!-- LOCAL MEDIA -->
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">📰 LOCAL MEDIA COVERAGE</div>
+          <div class="card-subtitle">Phoenix & Dallas beat reporters</div>
+        </div>
+        <div class="expand-icon">▶</div>
+      </div>
+      <div class="card-content">
+        <div class="narrative">
+          <strong>Arizona Republic (Duane Rankin):</strong> Documented Brooks' technical foul exchange with officials and posted video of Booker interjecting "Don't get him fined" during Brooks' postgame — the clip went viral on X. Rankin's coverage centered the FT disparity (44-9) as the dominant storyline.
+        </div>
+        <div class="narrative">
+          <strong>ArizonaSports.com (Kellan Olson):</strong> Reported the FT differential (44-9) is the highest in 5 seasons and only the 7th time in the past 15 years a game has seen that level of disparity. Statistical context that strengthens the Suns' resilience narrative.
+        </div>
+        <div class="narrative">
+          <strong>BurnCitySports:</strong> Covered Ott's "shot diet" philosophy — the first-year head coach wants a more drive-heavy offense. Also noted Coffey's debut integration and Jalen Green's return from injury.
+        </div>
+        <div class="narrative">
+          <strong>Dallas Morning News:</strong> Led with Flagg posterizing Brooks on a one-handed dunk in Q2. Noted Mavs governor <strong>Patrick Dumont attended courtside</strong> — ownership monitoring the rebuild in person. Flagg tied Kobe Bryant for 6th-most 20-point games by a teenager (24 career).
+        </div>
+        <div class="narrative">
+          <strong>Mavs Moneyball:</strong> Scathing recap calling it a "fart-and-fall-down 120-111 loss" and describing Marshall's fourth-quarter surge as "the fakest comeback attempt the NBA has seen this year." Called the early offense "ugly" and noted the Mavs went 5:45 without a field goal to start.
+        </div>
+        <div class="narrative" style="margin-top:8px;padding:10px 14px;background:rgba(255,140,66,0.08);border-left:3px solid var(--accent-orange);border-radius:6px;">
+          <strong style="color:var(--accent-orange);">📌 Ownership Note:</strong> Patrick Dumont attending courtside in Phoenix is notable — Dallas ownership is actively scouting their rebuild in road environments. The Brooks/Booker viral moment is net-positive brand visibility. Mavs Moneyball's tone confirms Dallas media has accepted the tank; no pressure on Kidd from their own beat.
+        </div>
+      </div>
+    </div>
+
+    <!-- NATIONAL MEDIA -->
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">🌐 NATIONAL MEDIA</div>
+          <div class="card-subtitle">ESPN, SI, NBA.com, ClutchPoints, Yahoo Sports</div>
+        </div>
+        <div class="expand-icon">▶</div>
+      </div>
+      <div class="card-content">
+        <div class="narrative">
+          <strong>ESPN:</strong> Standard game recap emphasizing Dallas' 8-game losing streak (longest since 2016) and Phoenix's 31-point lead that nearly evaporated. Framed as a Suns hold-on rather than a convincing win.
+        </div>
+        <div class="narrative">
+          <strong>Sports Illustrated (Suns beat):</strong> Featured the historic FT differential — the Suns are just the <strong>9th team in NBA history</strong> to win with a minus-35 FT attempt disparity or worse. Previous teams were 8-56 in such games. Unprecedented resilience stat.
+        </div>
+        <div class="narrative">
+          <strong>Sports Illustrated (Mavs beat):</strong> Published a "3 Overreactions" piece: "The Mavericks shot 44 free throws in this game. The Suns shot just 9. And still, it wasn't enough for the Mavericks to get a win. That's borderline impressive. <strong>The ethical tank lives on.</strong>"
+        </div>
+        <div class="narrative">
+          <strong>NBA.com:</strong> Highlighted Brooks (23 pts) and Booker (19 pts, 6 ast) guiding Phoenix past the 36-16 first-quarter blitz. Noted Flagg's 27 points kept him "red-hot" heading into All-Star weekend.
+        </div>
+        <div class="narrative">
+          <strong>ClutchPoints:</strong> Covered Coffey's debut quotes and Flagg "bullying" Brooks on the poster dunk. Focused on the highlight-reel narrative.
+        </div>
+        <div class="narrative">
+          <strong>Yahoo Sports / TalkBasket.net:</strong> Republished Ott's FT disparity reaction. International coverage picked up Kidd's physicality comments, extending the story beyond domestic outlets.
+        </div>
+        <div class="narrative" style="margin-top:8px;padding:10px 14px;background:rgba(255,140,66,0.08);border-left:3px solid var(--accent-orange);border-radius:6px;">
+          <strong style="color:var(--accent-orange);">📌 Ownership Note:</strong> The SI stat (9th team ever to win with -35 FT disparity) is a powerful resilience talking point. National framing is split: Suns-focused outlets emphasize grit, Mavs-focused outlets push the "ethical tank" narrative. The game received above-average national attention due to Flagg's star power — positive exposure for the Suns brand even in a game that got uncomfortably close.
+        </div>
+      </div>
+    </div>
+
+    <!-- SOCIAL MEDIA & PODCASTS -->
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">📱 SOCIAL MEDIA & PODCASTS</div>
+          <div class="card-subtitle">X (Twitter), YouTube, Reddit sentiment</div>
+        </div>
+        <div class="expand-icon">▶</div>
+      </div>
+      <div class="card-content">
+        <div class="narrative">
+          <strong>X / Twitter — Dominant Themes:</strong>
+        </div>
+        <div class="narrative" style="padding-left:12px;border-left:2px solid var(--accent-purple);">
+          • FT disparity outrage (44-9) dominated Suns fan discourse — disbelief that PHX won despite it<br>
+          • Duane Rankin's video of Brooks' tech + Booker's "Don't get him fined" went viral<br>
+          • Flagg's poster dunk on Brooks was the most-shared highlight from the game<br>
+          • Marshall's 31-point bench performance sparked debate about Dallas' depth in rebuild mode<br>
+          • "Ethical tank" jokes about Dallas losing despite 35 extra FT attempts
+        </div>
+        <div class="narrative" style="margin-top:12px;">
+          <strong>YouTube / Podcasts:</strong>
+        </div>
+        <div class="narrative" style="padding-left:12px;border-left:2px solid var(--accent-teal);">
+          • <strong>Suns JAM Session Podcast</strong> (Bright Side of the Sun) — Full postgame analysis with emphasis on first-half dominance and fourth-quarter concerns<br>
+          • <strong>PHNX Suns</strong> — "Suns Hold Off Mavs Despite 35 Free Throw Disparity" breakdown; focused on officiating imbalance and Ott's candid presser
+        </div>
+        <div class="narrative" style="margin-top:12px;">
+          <strong>Reddit Sentiment:</strong>
+        </div>
+        <div class="narrative" style="padding-left:12px;border-left:2px solid var(--success);">
+          Fan frustration with officiating, appreciation for Suns' resilience despite FT disadvantage. Flagg highlight clips widely upvoted. General sentiment: "A win is a win, but that fourth quarter can't happen in the playoffs."
+        </div>
+        <div class="narrative" style="margin-top:8px;padding:10px 14px;background:rgba(255,140,66,0.08);border-left:3px solid var(--accent-orange);border-radius:6px;">
+          <strong style="color:var(--accent-orange);">📌 Ownership Note:</strong> Social sentiment is net-positive for the Suns brand. The Brooks/Booker moment and the resilience narrative play well. The Flagg poster will circulate widely (expect it in season-recap packages). The main risk is the fourth-quarter collapse narrative gaining traction if it becomes a pattern — two more instances and it shifts from "one-off" to "concern."
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- KEY THEMES TAB -->
+  <div id="themes" class="tab-content">
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">OWNERSHIP THEMES</div>
+          <div class="card-subtitle">Signals for Mat Ishbia / front office</div>
+        </div>
+        <div class="expand-icon open">▶</div>
+      </div>
+      <div class="card-content open">
+        <div class="narrative">
+          <strong>1. Depth is real and scalable.</strong> The bench produced 48 points. Ryan Dunn (12 pts, 4-5 FG) continues to emerge as a two-way weapon. Oso Ighodaro's double-double and Royce O'Neale's 4-7 from three show that the supporting cast isn't just filling in — they're driving outcomes. This scales for playoff basketball where 8-man rotations become 9-man rotations.
+        </div>
+        <div class="narrative">
+          <strong>2. Coffey fits the mold.</strong> The trade deadline acquisition looked comfortable in his debut. Shooting, defense, and versatility — exactly what Ott's system demands. The All-Star break gives him time to absorb the playbook. Low-risk, high-potential addition that strengthens wing depth.
+        </div>
+        <div class="narrative">
+          <strong>3. The foul/FT discrepancy is a concern.</strong> PHX shot 6-of-9 free throws vs Dallas' 32-of-44. That's a 27-to-12 personal foul gap. The Suns won despite this, but in a tighter game or playoff setting, that disparity could be the difference. Ott's emphasis on "getting to the rim" is partly about drawing more contact and getting to the line.
+        </div>
+        <div class="narrative">
+          <strong>4. Fourth-quarter execution needs tightening.</strong> The Suns were outscored 36-24 in Q4 after building a 31-point lead. While "load management in a blowout" is a charitable read, allowing a 6-point game with 2 minutes left requires attention. Booker's clutch shotmaking bailed out sloppy possessions late.
+        </div>
+        <div class="narrative">
+          <strong>5. The "Ott identity" is solidifying.</strong> 32 assists, depth scoring, defensive intensity, and system-over-stars. Nights like this — where no single player dominates but everyone contributes — strengthen the case that the underlying system is a real competitive edge, not just star talent. Seven Suns scored 8+ points.
+        </div>
+        <div class="narrative">
+          <strong>6. Green's return adds a dimension.</strong> Jalen Green's speed and dribble-drive ability change the offensive calculus. His health is the swing variable for Phoenix's ceiling — a healthy Green means a legitimate fourth scoring option who can attack downhill and draw the kind of fouls the Suns desperately need.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEXT GAME TAB -->
+  <div id="next" class="tab-content">
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">NEXT GAME: vs OKLAHOMA CITY THUNDER</div>
+          <div class="card-subtitle">Wednesday, Feb 11, 2026 • Home • Mortgage Matchup Center</div>
+        </div>
+        <div class="expand-icon open">▶</div>
+      </div>
+      <div class="card-content open">
+        <div class="narrative">
+          A major test before the All-Star break. OKC is a top-tier Western Conference opponent and this is a back-to-back for Phoenix. Key questions: Will Booker and Green be managed on minutes? Can the depth unit sustain its production against elite competition? How does Coffey look with another game under his belt?
+        </div>
+        <div class="narrative">
+          <strong>Injury Watch:</strong> Grayson Allen (knee) remains out and will be reevaluated after the All-Star break. Jalen Green is back but may still be on a minutes restriction. Devin Booker is playing through his ankle but has shown no signs of limitation.
+        </div>
+        <div class="narrative">
+          <strong>What to Watch:</strong> Phoenix's 32-assist performance tonight sets a high bar. Against OKC's elite defense, the Suns will need to sustain that ball movement. The FT discrepancy theme becomes amplified against a physical Thunder team — if Phoenix can't get to the line against Dallas' tanking squad, how will they fare against a playoff-caliber opponent?
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-logo" style="display:flex;align-items:center;gap:8px;">
+      <svg width="20" height="20" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="28" stroke="#60a5fa" stroke-width="1.5" opacity="0.15"/>
+        <circle cx="32" cy="32" r="20" stroke="#60a5fa" stroke-width="2" opacity="0.35"/>
+        <circle cx="32" cy="32" r="13" stroke="#60a5fa" stroke-width="2.5" opacity="0.6"/>
+        <line x1="24" y1="32" x2="43" y2="32" stroke="#93c5fd" stroke-width="3.5" stroke-linecap="round"/>
+        <polyline points="37,25 44,32 37,39" stroke="#93c5fd" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <span style="color:#7a7a94;font-size:0.7rem;">Built by <strong style="color:#60a5fa;font-weight:600;">Accelerated Velocity Consulting</strong></span>
+    </div>
+    <p>Phoenix Suns Postgame Dashboard — Interactive Quotes & Narrative Intelligence</p>
+    <p style="margin-top:10px;">Sources: ESPN · NBA.com · AP · SI.com · ClutchPoints · ArizonaSports.com · BurnCitySports · Dallas Morning News · Mavs Moneyball · Yahoo Sports · TalkBasket.net · PHNX Suns · Suns JAM Session</p>
+    <p style="margin-top:10px;color:#4a4a6a;">Compiled for Ownership · Feb 11, 2026</p>
+  </div>
+</div>
+
+<script>
+  function toggleCard(element) {
+    const card = element.closest('.card');
+    const content = card.querySelector('.card-content');
+    const icon = card.querySelector('.expand-icon');
+    content.classList.toggle('open');
+    icon.classList.toggle('open');
+  }
+
+  function showTab(evt, tabName) {
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    const buttons = document.querySelectorAll('.tab-button');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    document.getElementById(tabName).classList.add('active');
+    evt.target.classList.add('active');
+  }
+</script>
+</body>
+</html>
