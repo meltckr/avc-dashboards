@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suns vs Thunder â Pregame Dashboard | Feb 11, 2026</title>
+
+<!-- Open Graph / iMessage Preview -->
+<meta property="og:title" content="Suns vs Thunder â Pregame Dashboard">
+<meta property="og:description" content="PHX (32-22) vs OKC (41-13) | SGA OUT | Booker & Green GTD | Jalen Williams back from 10-game absence | Last game before All-Star break | 7:00 PM MST">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://meltckr.github.io/avc-dashboards/og-suns-thunder-pregame-feb11.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://meltckr.github.io/avc-dashboards/suns-thunder-pregame-feb11.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #1D1160;
+    --orange: #E56020;
+    --gold: #F9A01B;
+    --thunder-blue: #007AC1;
+    --gray100: #F0F0F3;
+    --gray200: #E2E2E8;
+    --gray500: #71717A;
+    --gray700: #3F3F46;
+    --green: #16A34A;
+    --red: #DC2626;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: var(--gray100);
+    min-height: 100vh;
+  }
+
+  /* AVC HEADER BAR */
+  .avc-header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0a0a14;
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .avc-header-bar .avc-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .avc-header-bar .avc-divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(96,165,250,0.3);
+  }
+  .avc-header-bar .avc-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+  .avc-header-bar .avc-w1 {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #f0f0f8;
+    line-height: 1.2;
+  }
+  .avc-header-bar .avc-w2 {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #60a5fa;
+    line-height: 1.2;
+  }
+  .avc-header-bar .client-info {
+    text-align: right;
+    font-size: 0.75rem;
+    color: #7a7a94;
+  }
+  .avc-header-bar .client-name {
+    font-weight: 600;
+    color: #a8a7c0;
+    font-size: 0.8rem;
+  }
+
+  /* SUNS HEADER */
+  .suns-header {
+    background: var(--purple);
+    padding: 28px 40px 24px;
+    text-align: center;
+    position: relative;
+  }
+  .suns-header .badge {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+  }
+  .suns-header h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 44px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.05;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .suns-header h1 .vs {
+    color: rgba(255,255,255,0.4);
+    font-size: 28px;
+    margin: 0 8px;
+  }
+  .suns-header .sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 1px;
+  }
+  .suns-header .sub strong { color: var(--gold); }
+  .suns-header .accent-bar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange), var(--gold), var(--orange));
+  }
+
+  /* LAYOUT */
+  .content { max-width: 1100px; margin: 0 auto; padding: 20px 20px 40px; }
+
+  /* CARD */
+  .card {
+    background: #fff;
+    border: 1px solid var(--gray200);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    margin-bottom: 16px;
+  }
+
+  .card-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid var(--gray100);
+    padding-bottom: 10px;
+  }
+  .card-title .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot-orange { background: var(--orange); }
+  .dot-blue { background: var(--thunder-blue); }
+
+  /* STORYLINE */
+  .storyline {
+    background: #fff;
+    border: 2px solid var(--orange);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .storyline .label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 8px;
+  }
+  .storyline p { font-size: 14px; color: var(--gray700); line-height: 1.65; }
+
+  /* MATCHUP BANNER */
+  .matchup-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 32px;
+  }
+  .team-block { text-align: center; }
+  .team-block .abbr {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 1;
+  }
+  .team-block .name {
+    font-size: 14px;
+    color: var(--gray500);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .team-block .record {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    margin-top: 6px;
+  }
+  .team-block .conf {
+    font-size: 12px;
+    color: var(--gray500);
+    letter-spacing: 1px;
+  }
+  .vs-block { text-align: center; }
+  .vs-block .vs-text {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #C5C5CE;
+    letter-spacing: 3px;
+  }
+  .vs-block .series {
+    font-size: 12px;
+    color: var(--gray500);
+    margin-top: 4px;
+    letter-spacing: 1px;
+  }
+
+  /* FORM RESULTS */
+  .form-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .form-row .team-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    width: 36px;
+  }
+  .form-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  .form-result .box {
+    width: 30px; height: 30px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .box-w { background: #DCFCE7; color: var(--green); }
+  .box-l { background: #FEE2E2; color: var(--red); }
+  .form-result .opp { font-size: 9px; color: var(--gray500); letter-spacing: 0.5px; }
+  .form-record {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 8px;
+  }
+
+  /* TWO COL GRID */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  /* STAT LEADER TABLE */
+  .stat-header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 6px;
+    margin-bottom: 4px;
+    border-bottom: 2px solid var(--gray100);
+  }
+  .stat-header span {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--gray500);
+    text-transform: uppercase;
+  }
+  .stat-header .col-player { flex: 1; }
+  .stat-header .col-num { width: 52px; text-align: center; }
+
+  .player-row {
+    display: flex;
+    align-items: center;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--gray100);
+  }
+  .player-row.dimmed { opacity: 0.3; text-decoration: line-through; }
+  .player-row .pname {
+    flex: 1;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+  }
+  .player-row .ppos {
+    font-size: 11px;
+    color: var(--gray500);
+    margin-left: 4px;
+    font-weight: 400;
+  }
+  .player-row .ptag {
+    display: inline-block;
+    background: #FEF3C7;
+    color: #B45309;
+    font-family: 'Oswald', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 1px 5px;
+    border-radius: 2px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .player-row .pstat {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    width: 52px;
+    text-align: center;
+    color: var(--gray700);
+  }
+  .player-row .pstat.primary { font-size: 17px; color: var(--purple); }
+  .player-row.dimmed .pstat.primary { font-size: 15px; }
+
+  /* INJURY */
+  .injury-row {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--gray100);
+    gap: 10px;
+  }
+  .injury-status {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 3px;
+    min-width: 55px;
+    text-align: center;
+  }
+  .status-out { background: #FEE2E2; color: var(--red); }
+  .status-gtd { background: #FEF3C7; color: #B45309; }
+  .injury-name { font-weight: 600; font-size: 14px; }
+  .injury-reason { font-size: 12px; color: var(--gray500); }
+
+  /* COMPARE */
+  .compare-row {
+    display: flex;
+    align-items: center;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--gray100);
+  }
+  .compare-val {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    width: 70px;
+    text-align: center;
+    color: var(--gray700);
+  }
+  .compare-val.better { font-weight: 700; color: var(--orange); }
+  .compare-label {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray500);
+  }
+  .compare-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    margin-top: 4px;
+  }
+  .compare-footer span {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* KEY NUMBERS */
+  .key-num { text-align: center; }
+  .key-num .val {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 1;
+  }
+  .key-num .val.danger { color: var(--red); }
+  .key-num .val.normal { color: var(--purple); }
+  .key-num .lbl {
+    font-size: 13px;
+    color: var(--gray500);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* GAME NOTES */
+  .game-notes {
+    background: #fff;
+    border: 2px solid var(--purple);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .game-notes .label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 8px;
+  }
+  .game-notes p { font-size: 14px; color: var(--gray700); line-height: 1.65; }
+
+  /* AVC FOOTER */
+  .avc-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: #0a0a14;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 20px;
+    border-radius: 0 0 10px 10px;
+    font-size: 0.7rem;
+    color: #7a7a94;
+  }
+  .avc-footer .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .avc-footer .footer-text { color: #7a7a94; }
+  .avc-footer .footer-text strong { color: #60a5fa; font-weight: 600; }
+  .avc-footer .footer-right { text-align: right; font-size: 0.7rem; color: #7a7a94; }
+
+  @media (max-width: 768px) {
+    .two-col, .three-col { grid-template-columns: 1fr; }
+    .matchup-grid { grid-template-columns: 1fr; gap: 12px; }
+    .suns-header h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- AVC HEADER BAR -->
+<div class="avc-header-bar">
+  <div class="avc-logo">
+    <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="32" r="28" stroke="#60a5fa" stroke-width="1.5" opacity="0.15"/>
+      <circle cx="32" cy="32" r="20" stroke="#60a5fa" stroke-width="2" opacity="0.35"/>
+      <circle cx="32" cy="32" r="13" stroke="#60a5fa" stroke-width="2.5" opacity="0.6"/>
+      <line x1="24" y1="32" x2="43" y2="32" stroke="#93c5fd" stroke-width="3.5" stroke-linecap="round"/>
+      <polyline points="37,25 44,32 37,39" stroke="#93c5fd" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    <div class="avc-divider"></div>
+    <div class="avc-text">
+      <span class="avc-w1">Accelerated</span>
+      <span class="avc-w2">Velocity</span>
+    </div>
+  </div>
+  <div class="client-info">
+    <div class="client-name">Phoenix Suns</div>
+    <div>Pregame Dashboard</div>
+  </div>
+</div>
+
+<!-- SUNS HEADER -->
+<div class="suns-header">
+  <div class="badge">Pregame Preview</div>
+  <h1>SUNS <span class="vs">VS</span> THUNDER</h1>
+  <div class="sub">Wednesday, February 11, 2026 &nbsp;&bull;&nbsp; <strong>7:00 PM MST</strong> &nbsp;&bull;&nbsp; Footprint Center, Phoenix</div>
+  <div class="accent-bar"></div>
+</div>
+
+<div class="content">
+
+  <!-- KEY STORYLINE -->
+  <div class="storyline">
+    <div class="label">&#9889; Key Storyline</div>
+    <p>
+      <strong>SGA remains OUT</strong> for OKC with an abdominal strain &mdash; he won&rsquo;t return until after the All-Star break. <strong>Ajay Mitchell</strong> (14.1 PPG) is also ruled out, costing the Thunder 45.9 combined PPG. The good news for OKC: <strong>Jalen Williams returned Monday</strong> from a 10-game absence and scored 23 points in 24 minutes vs. the Lakers. On the Suns&rsquo; side, <strong>Devin Booker</strong> (right ankle) and <strong>Jalen Green</strong> (right hamstring) are both <strong>questionable</strong> on the second night of a back-to-back, while <strong>Grayson Allen</strong> (16.7 PPG) is <strong>OUT</strong> with a knee sprain. Last game before the All-Star break for both teams.
+    </p>
+  </div>
+
+  <!-- MATCHUP BANNER -->
+  <div class="card">
+    <div class="matchup-grid">
+      <div class="team-block">
+        <div class="abbr" style="color: var(--purple);">PHX</div>
+        <div class="name">Phoenix Suns</div>
+        <div class="record">32&ndash;22</div>
+        <div class="conf">7th Western Conference</div>
+      </div>
+      <div class="vs-block">
+        <div class="vs-text">VS</div>
+        <div class="series">Season Series: OKC leads 2-1</div>
+      </div>
+      <div class="team-block">
+        <div class="abbr" style="color: var(--thunder-blue);">OKC</div>
+        <div class="name">Oklahoma City Thunder</div>
+        <div class="record">41&ndash;13</div>
+        <div class="conf">1st Western Conference</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LAST 10 GAMES -->
+  <div class="card">
+    <div class="card-title"><span class="dot dot-orange"></span> Last 10 Games</div>
+    <div class="form-row">
+      <div class="team-label" style="color: var(--orange);">PHX</div>
+      <div class="form-result"><div class="box box-l">L</div><div class="opp">@ATL</div></div>
+      <div class="form-result"><div class="box box-l">L</div><div class="opp">MIA</div></div>
+      <div class="form-result"><div class="box box-w">W</div><div class="opp">BKN</div></div>
+      <div class="form-result"><div class="box box-w">W</div><div class="opp">DET</div></div>
+      <div class="form-result"><div class="box box-w">W</div><div class="opp">CLE</div></div>
+      <div class="form-result"><div class="box box-l">L</div><div class="opp">LAC</div></div>
+      <div class="form-result"><div class="box box-w">W</div><div class="opp">@POR</div></div>
+      <div class="form-result"><div class="box box-w">W</div><div class="opp">GSW</div></div>
+      <div class="form-result"><div class="box box-l">L</div><div class="opp">PHI</div></div>
+      <div class="form-result"><div class="box box-w">W</div><div class="opp">DAL</div></div>
+      <div class="form-record">6-4</div>
+    </div>
+    <div class="form-row" style="margin-bottom: 0;">
+      <div class="team-label" style="color: var(--thunder-blue);">OKC</div>
+      <div class="form-result"><div class="box box-w">W</div><div class="opp">@MIL</div></div>
+      <div class="form-result"><div class="box box-l">L</div><div class="opp">IND</div></div>
+      <div class="form-result"><div class="box box-l">L</div><div class="opp">TOR</div></div>
+      <div class="form-result"><div class="box box-w">W</div><div class="opp">NOP</div></div>
+      <div class="form-result"><div class="box box-l">L</div><div class="opp">@MIN</div></div>
+      <div class="form-result"><div class="box box-w">W</div><div class="opp">@DEN</div></div>
+      <div class="form-result"><div class="box box-w">W</div><div class="opp">ORL</div></div>
+      <div class="form-result"><div class="box box-l">L</div><div class="opp">@SAS</div></div>
+      <div class="form-result"><div class="box box-l">L</div><div class="opp">HOU</div></div>
+      <div class="form-result"><div class="box box-w">W</div><div class="opp">@LAL</div></div>
+      <div class="form-record">5-5</div>
+    </div>
+  </div>
+
+  <!-- STAT LEADERS -->
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title"><span class="dot dot-orange"></span> Suns Stat Leaders</div>
+      <div class="stat-header">
+        <span class="col-player">Player</span>
+        <span class="col-num">PPG</span>
+        <span class="col-num">RPG</span>
+        <span class="col-num">APG</span>
+      </div>
+      <div class="player-row">
+        <div class="pname">D. Booker <span class="ppos">G</span> <span class="ptag">GTD</span></div>
+        <div class="pstat primary">25.4</div>
+        <div class="pstat">&mdash;</div>
+        <div class="pstat">6.2</div>
+      </div>
+      <div class="player-row">
+        <div class="pname">D. Brooks <span class="ppos">F</span></div>
+        <div class="pstat primary">21.1</div>
+        <div class="pstat">&mdash;</div>
+        <div class="pstat">&mdash;</div>
+      </div>
+      <div class="player-row dimmed">
+        <div class="pname">G. Allen <span class="ppos">G</span></div>
+        <div class="pstat primary">16.7</div>
+        <div class="pstat">&mdash;</div>
+        <div class="pstat">4.0</div>
+      </div>
+      <div class="player-row">
+        <div class="pname">C. Gillespie <span class="ppos">G</span></div>
+        <div class="pstat primary">13.5</div>
+        <div class="pstat">4.1</div>
+        <div class="pstat">4.9</div>
+      </div>
+      <div class="player-row">
+        <div class="pname">M. Williams <span class="ppos">C</span></div>
+        <div class="pstat primary">12.3</div>
+        <div class="pstat">8.1</div>
+        <div class="pstat">&mdash;</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="dot dot-blue"></span> Thunder Stat Leaders</div>
+      <div class="stat-header">
+        <span class="col-player">Player</span>
+        <span class="col-num">PPG</span>
+        <span class="col-num">RPG</span>
+        <span class="col-num">APG</span>
+      </div>
+      <div class="player-row dimmed">
+        <div class="pname">S. Gilgeous-Alexander <span class="ppos">G</span></div>
+        <div class="pstat primary">31.8</div>
+        <div class="pstat">4.4</div>
+        <div class="pstat">6.4</div>
+      </div>
+      <div class="player-row">
+        <div class="pname">C. Holmgren <span class="ppos">C</span></div>
+        <div class="pstat primary">17.6</div>
+        <div class="pstat">8.7</div>
+        <div class="pstat">&mdash;</div>
+      </div>
+      <div class="player-row">
+        <div class="pname">J. Williams <span class="ppos">F</span></div>
+        <div class="pstat primary">17.0</div>
+        <div class="pstat">4.8</div>
+        <div class="pstat">5.6</div>
+      </div>
+      <div class="player-row dimmed">
+        <div class="pname">A. Mitchell <span class="ppos">G</span></div>
+        <div class="pstat primary">14.1</div>
+        <div class="pstat">&mdash;</div>
+        <div class="pstat">&mdash;</div>
+      </div>
+      <div class="player-row">
+        <div class="pname">I. Hartenstein <span class="ppos">C</span></div>
+        <div class="pstat">&mdash;</div>
+        <div class="pstat">9.9</div>
+        <div class="pstat">&mdash;</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INJURY REPORTS -->
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title"><span class="dot dot-orange"></span> Suns Injury Report</div>
+      <div class="injury-row">
+        <div class="injury-status status-gtd">GTD</div>
+        <div><div class="injury-name">Devin Booker</div><div class="injury-reason">Right ankle sprain</div></div>
+      </div>
+      <div class="injury-row">
+        <div class="injury-status status-gtd">GTD</div>
+        <div><div class="injury-name">Jalen Green</div><div class="injury-reason">Right hamstring</div></div>
+      </div>
+      <div class="injury-row">
+        <div class="injury-status status-out">OUT</div>
+        <div><div class="injury-name">Grayson Allen</div><div class="injury-reason">Right knee sprain &mdash; re-eval after ASB</div></div>
+      </div>
+      <div class="injury-row">
+        <div class="injury-status status-out">OUT</div>
+        <div><div class="injury-name">Isaiah Livers</div><div class="injury-reason">Left shoulder sprain &mdash; re-eval after ASB</div></div>
+      </div>
+      <div class="injury-row">
+        <div class="injury-status status-out">OUT</div>
+        <div><div class="injury-name">Cole Anthony</div><div class="injury-reason">Not with team</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="dot dot-blue"></span> Thunder Injury Report</div>
+      <div class="injury-row">
+        <div class="injury-status status-out">OUT</div>
+        <div><div class="injury-name">Shai Gilgeous-Alexander</div><div class="injury-reason">Abdominal strain &mdash; re-eval after ASB</div></div>
+      </div>
+      <div class="injury-row">
+        <div class="injury-status status-out">OUT</div>
+        <div><div class="injury-name">Ajay Mitchell</div><div class="injury-reason">Abdominal strain &mdash; 10th consecutive miss</div></div>
+      </div>
+      <div class="injury-row">
+        <div class="injury-status status-out">OUT</div>
+        <div><div class="injury-name">Thomas Sorber</div><div class="injury-reason">Torn ACL (right knee)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEAM COMPARISON -->
+  <div class="card">
+    <div class="card-title"><span class="dot dot-orange"></span> Team Comparison</div>
+    <div class="compare-row">
+      <div class="compare-val">113.8</div>
+      <div class="compare-label">Points Per Game</div>
+      <div class="compare-val better">119.9</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-val">111.4</div>
+      <div class="compare-label">Opp Points Per Game</div>
+      <div class="compare-val better">108.0</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-val">+2.4</div>
+      <div class="compare-label">Scoring Differential</div>
+      <div class="compare-val better">+11.9</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-val better">14.6</div>
+      <div class="compare-label">3-Pointers Made / Game</div>
+      <div class="compare-val">&mdash;</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-val">43.0</div>
+      <div class="compare-label">Rebounds Per Game</div>
+      <div class="compare-val better">43.7</div>
+    </div>
+    <div class="compare-footer">
+      <span style="color: var(--purple);">PHX</span>
+      <span style="color: var(--thunder-blue);">OKC</span>
+    </div>
+  </div>
+
+  <!-- KEY NUMBERS -->
+  <div class="three-col">
+    <div class="card key-num">
+      <div class="val normal">155</div>
+      <div class="lbl">Gillespie 3PM in 51 G<br>Franchise record pace</div>
+    </div>
+    <div class="card key-num">
+      <div class="val danger">45.9</div>
+      <div class="lbl">OKC PPG lost<br>without SGA + Mitchell</div>
+    </div>
+    <div class="card key-num">
+      <div class="val normal">120</div>
+      <div class="lbl">PHX scored last night<br>in win over Dallas</div>
+    </div>
+  </div>
+
+  <!-- GAME NOTES -->
+  <div class="game-notes">
+    <div class="label">&#128203; Game Notes</div>
+    <p>
+      &bull; Last game before the <strong>All-Star break</strong> for both teams &mdash; Suns don&rsquo;t play again until Feb 20 @ SAS<br>
+      &bull; Suns on the <strong>second night of a back-to-back</strong> after beating Dallas 120&ndash;111 last night<br>
+      &bull; <strong>Jalen Williams returned Monday</strong> from 10-game hamstring absence &mdash; scored 23 points in 24 monitored minutes vs. Lakers<br>
+      &bull; OKC is the <strong>defending NBA champion</strong> (defeated Indiana in 7 games in &rsquo;25 Finals)<br>
+      &bull; Thunder started the season <strong>24&ndash;1</strong> but have gone 17&ndash;12 since<br>
+      &bull; <strong>Jared McCain</strong> made his OKC debut Feb 7 after trade from Philadelphia &mdash; 5 pts in 14 min<br>
+      &bull; Coach Jordan Ott has noted he will manage minutes carefully given the break ahead<br>
+      &bull; Booker had 19 pts / 6 ast last night in just his 2nd game back from 7-game ankle absence
+    </p>
+  </div>
+
+  <!-- AVC FOOTER -->
+  <div class="avc-footer">
+    <div class="footer-logo">
+      <svg width="20" height="20" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="28" stroke="#60a5fa" stroke-width="1.5" opacity="0.15"/>
+        <circle cx="32" cy="32" r="20" stroke="#60a5fa" stroke-width="2" opacity="0.35"/>
+        <circle cx="32" cy="32" r="13" stroke="#60a5fa" stroke-width="2.5" opacity="0.6"/>
+        <line x1="24" y1="32" x2="43" y2="32" stroke="#93c5fd" stroke-width="3.5" stroke-linecap="round"/>
+        <polyline points="37,25 44,32 37,39" stroke="#93c5fd" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <span class="footer-text">Built by <strong>Accelerated Velocity Consulting</strong></span>
+    </div>
+    <div class="footer-right">Data as of Feb 11, 2026</div>
+  </div>
+
+</div>
+
+</body>
+</html>
