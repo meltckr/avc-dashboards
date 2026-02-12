@@ -1,198 +1,763 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Suns vs Thunder — Postgame Dashboard | Feb 11, 2026</title>
-<meta property="og:title" content="Thunder 136, Suns 109 — Postgame Dashboard">
-<meta property="og:description" content="OKC blows out shorthanded Suns | Jalen Williams 28 PTS (11-12 FG) | Brooks 23 PTS | OKC bench: 74 PTS | Last game before All-Star break">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://meltckr.github.io/avc-dashboards/og-suns-thunder-postgame-feb11.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="https://meltckr.github.io/avc-dashboards/suns-thunder-postgame-feb11.html">
-<meta name="twitter:card" content="summary_large_image">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--purple:#1D1160;--orange:#E56020;--gold:#F9A01B;--thunder-blue:#007AC1;--gray100:#F0F0F3;--gray200:#E2E2E8;--gray500:#71717A;--gray700:#3F3F46;--green:#16A34A;--red:#DC2626}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:system-ui,-apple-system,sans-serif;background:var(--gray100);min-height:100vh}
-.avc-header-bar{display:flex;align-items:center;justify-content:space-between;background:#0a0a14;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.08)}
-.avc-header-bar .avc-logo{display:flex;align-items:center;gap:12px}
-.avc-header-bar .avc-divider{width:1px;height:24px;background:rgba(96,165,250,0.3)}
-.avc-header-bar .avc-text{display:flex;flex-direction:column;gap:1px}
-.avc-header-bar .avc-w1{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#f0f0f8;line-height:1.2}
-.avc-header-bar .avc-w2{font-size:10px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;color:#60a5fa;line-height:1.2}
-.avc-header-bar .client-info{text-align:right;font-size:0.75rem;color:#7a7a94}
-.avc-header-bar .client-name{font-weight:600;color:#a8a7c0;font-size:0.8rem}
-.result-header{background:var(--purple);padding:28px 40px 24px;text-align:center;position:relative}
-.result-header .badge{display:inline-block;background:var(--red);color:#fff;font-family:'Oswald',sans-serif;font-size:0.75rem;font-weight:600;padding:4px 16px;border-radius:6px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px}
-.result-header .score-line{font-family:'Oswald',sans-serif;color:#fff;font-weight:700;font-size:3rem;letter-spacing:2px;line-height:1.1}
-.result-header .score-line .vs{font-size:1.5rem;color:rgba(255,255,255,0.4);margin:0 12px;vertical-align:middle}
-.result-header .score-line .score{color:var(--orange);font-size:2.2rem;margin-left:8px}
-.result-header .score-line .score-lose{color:rgba(255,255,255,0.5);font-size:2.2rem;margin-left:8px}
-.result-header .sub-info{color:rgba(255,255,255,0.55);font-size:0.85rem;margin-top:10px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
-.result-header .sub-info .hl{color:var(--orange);font-weight:600}
-.result-header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--orange),var(--gold),var(--orange))}
-.quarter-bar{display:flex;justify-content:center;gap:0;background:#13103a;padding:12px 16px}
-.quarter-bar .qcell{text-align:center;padding:4px 14px;min-width:56px;font-size:0.82rem;color:rgba(255,255,255,0.7)}
-.quarter-bar .qcell.hdr{font-weight:600;color:rgba(255,255,255,0.4);font-size:0.7rem;text-transform:uppercase;letter-spacing:1px}
-.quarter-bar .qcell.team{font-weight:700;color:rgba(255,255,255,0.9);text-align:left;min-width:50px}
-.quarter-bar .qcell.total{font-weight:700;color:#fff}
-.quarter-bar .qcell.winner{color:var(--orange)}
-.quarter-bar .qrow{display:flex;gap:0}
-.quarter-wrap{display:flex;flex-direction:column;gap:2px}
-.container{max-width:1100px;margin:0 auto;padding:16px}
-.card{background:#fff;border-radius:10px;padding:20px 24px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
-.card-title{font-family:'Oswald',sans-serif;font-weight:600;font-size:0.85rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray700);margin-bottom:14px}
-.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
-.dot-orange{background:var(--orange)}.dot-blue{background:var(--thunder-blue)}.dot-red{background:var(--red)}.dot-green{background:var(--green)}
-.storyline-card{background:#fff;border-radius:10px;padding:20px 24px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,0.06);border-left:4px solid var(--orange)}
-.storyline-card .label{font-family:'Oswald',sans-serif;font-weight:600;font-size:0.85rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
-.storyline-card p{color:var(--gray700);font-size:0.92rem;line-height:1.7}
-.box-table{width:100%;border-collapse:collapse;font-size:0.82rem}
-.box-table th{text-align:center;font-size:0.7rem;letter-spacing:0.5px;text-transform:uppercase;color:var(--gray500);padding:6px 4px;border-bottom:2px solid var(--gray200)}
-.box-table th:first-child{text-align:left}
-.box-table td{text-align:center;padding:8px 4px;border-bottom:1px solid var(--gray200);color:var(--gray700)}
-.box-table td:first-child{text-align:left;font-weight:600;color:#1a1a2e}
-.box-table .starter-sep td{border-bottom:2px solid var(--gray200)}
-.box-table .totals-row td{font-weight:700;border-top:2px solid var(--gray700);color:#1a1a2e}
-.pos-tag{font-size:0.65rem;color:var(--gray500);font-weight:400;margin-left:4px}
-.high-pts{color:var(--orange);font-weight:700}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:0}
-@media(max-width:768px){.two-col{grid-template-columns:1fr}}
-.compare-row{display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;padding:8px 0;border-bottom:1px solid var(--gray200)}
-.compare-row:last-child{border-bottom:none}
-.compare-val{text-align:center;font-weight:600;color:var(--gray700);font-size:0.95rem}
-.compare-val.better{color:var(--green)}
-.compare-label{text-align:center;font-size:0.78rem;color:var(--gray500)}
-.compare-footer{display:flex;justify-content:space-between;padding-top:10px;font-weight:700;font-size:0.85rem}
-.quote-block{padding:14px 0;border-bottom:1px solid var(--gray200)}
-.quote-block:last-child{border-bottom:none}
-.quote-text{font-style:italic;color:var(--gray700);font-size:0.9rem;line-height:1.6;margin-bottom:6px}
-.quote-attr{font-size:0.78rem;color:var(--gray500);font-weight:600}
-.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px}
-@media(max-width:768px){.three-col{grid-template-columns:1fr}}
-.key-num{text-align:center;padding:18px 12px}
-.key-num .val{font-family:'Oswald',sans-serif;font-size:2.2rem;font-weight:700}
-.key-num .val.danger{color:var(--red)}.key-num .val.normal{color:var(--purple)}
-.key-num .lbl{font-size:0.78rem;color:var(--gray500);margin-top:4px;line-height:1.4}
-.game-notes{background:#fff;border-radius:10px;padding:20px 24px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
-.game-notes .label{font-family:'Oswald',sans-serif;font-weight:600;font-size:0.85rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray700);margin-bottom:10px}
-.game-notes p{color:var(--gray700);font-size:0.88rem;line-height:1.8}
-.avc-footer{display:flex;align-items:center;justify-content:space-between;background:#0a0a14;padding:16px;margin-top:24px;border-radius:0 0 10px 10px}
-.footer-logo{display:flex;align-items:center;gap:10px}
-.footer-text{font-size:0.75rem;color:#555}.footer-text strong{color:#888}
-.footer-right{font-size:0.68rem;color:#555}
-.table-wrap{overflow-x:auto}
-</style>
-</head><body>
-<div class="avc-header-bar">
-  <div class="avc-logo">
-    <svg width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="32" cy="32" r="28" stroke="#60a5fa" stroke-width="1.5" opacity="0.15"/>
-      <circle cx="32" cy="32" r="20" stroke="#60a5fa" stroke-width="2" opacity="0.35"/>
-      <circle cx="32" cy="32" r="13" stroke="#60a5fa" stroke-width="2.5" opacity="0.6"/>
-      <line x1="24" y1="32" x2="43" y2="32" stroke="#93c5fd" stroke-width="3.5" stroke-linecap="round"/>
-      <polyline points="37,25 44,32 37,39" stroke="#93c5fd" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    </svg>
-    <div class="avc-divider"></div>
-    <div class="avc-text"><span class="avc-w1">Accelerated</span><span class="avc-w2">Velocity</span></div>
-  </div>
-  <div class="client-info"><div class="client-name">Phoenix Suns</div>Postgame Dashboard</div>
-</div>
-<div class="result-header">
-  <div class="badge">🔴 Final — Loss</div>
-  <div class="score-line">SUNS <span class="score-lose">109</span><span class="vs">vs</span>THUNDER <span class="score">136</span></div>
-  <div class="sub-info">Wednesday, February 11, 2026 • <span class="hl">7:00 PM MST</span> • Footprint Center, Phoenix</div>
-</div>
-<div class="quarter-bar"><div class="quarter-wrap">
-  <div class="qrow"><div class="qcell hdr" style="min-width:50px;"></div><div class="qcell hdr">Q1</div><div class="qcell hdr">Q2</div><div class="qcell hdr">Q3</div><div class="qcell hdr">Q4</div><div class="qcell hdr">T</div></div>
-  <div class="qrow"><div class="qcell team" style="color:var(--thunder-blue);">OKC</div><div class="qcell winner">37</div><div class="qcell winner">38</div><div class="qcell winner">37</div><div class="qcell">24</div><div class="qcell total winner">136</div></div>
-  <div class="qrow"><div class="qcell team">PHX</div><div class="qcell">25</div><div class="qcell">27</div><div class="qcell">28</div><div class="qcell winner">29</div><div class="qcell total">109</div></div>
-</div></div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suns Postgame Dashboard – vs Oklahoma City Thunder Feb 11, 2026</title>
+  <!-- Open Graph / iMessage Preview -->
+  <meta property="og:title" content="Thunder 136, Suns 109 — Postgame Dashboard">
+  <meta property="og:description" content="Brooks 23 PTS (16th tech → suspension) | OKC shoots 58.4% | Booker, Green, Allen all out | Jalen Williams 28 on 11-12 FG. Full opponent quotes, media reactions & ownership intelligence inside.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://meltckr.github.io/avc-dashboards/og-suns-thunder-feb11.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://meltckr.github.io/avc-dashboards/suns-thunder-postgame-feb11.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    :root {
+      --bg-dark: #0f0e17;
+      --bg-card: #1a1927;
+      --bg-card-hover: #23212f;
+      --text-primary: #f0f0f8;
+      --text-secondary: #a8a7c0;
+      --text-muted: #7a7a94;
+      --accent-orange: #ff8c42;
+      --accent-purple: #7c5cff;
+      --accent-teal: #00d9ff;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-medium: rgba(255, 255, 255, 0.15);
+      --success: #4ade80;
+      --danger: #ff6b6b;
+      --info: #60a5fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%; height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      overflow-x: hidden;
+    }
+    body {
+      background: linear-gradient(135deg, #0a0812 0%, #1a0f2e 35%, #2d1b4e 70%, #0f0e17 100%);
+      padding: 16px; padding-bottom: 32px;
+    }
+    .container { max-width: 900px; margin: 0 auto; }
+    /* AVC LOGO BAR */
+    .avc-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 0; margin-bottom: 16px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .avc-bar .avc-logo-wrap { display: flex; align-items: center; gap: 10px; }
+    .avc-bar .avc-logo-wrap svg { height: 36px; width: auto; }
+    .avc-bar .avc-label {
+      font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--text-muted);
+    }
+    .avc-bar .avc-date {
+      font-size: 11px; color: var(--text-muted);
+    }
+    .header { margin-bottom: 24px; }
+    .header-top {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; margin-bottom: 8px;
+    }
+    .header-title {
+      font-size: 28px; font-weight: 700; letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #ff8c42 0%, #00d9ff 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .header-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 12px; border: 1px solid var(--border-medium); border-radius: 20px;
+      font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .header-badge.win { background: rgba(74, 222, 128, 0.15); color: var(--success); }
+    .header-badge.loss { background: rgba(255, 107, 107, 0.15); color: var(--danger); }
+    .header-sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+    .score-bar {
+      display: flex; align-items: center; justify-content: center; gap: 24px;
+      background: var(--bg-card); border: 1px solid var(--border-subtle);
+      border-radius: 12px; padding: 20px; margin-bottom: 24px;
+    }
+    .score-team { text-align: center; }
+    .score-team .name { font-size: 14px; color: var(--text-secondary); margin-bottom: 4px; }
+    .score-team .score { font-size: 42px; font-weight: 700; }
+    .score-team .score.winner { color: var(--success); }
+    .score-team .score.loser { color: var(--text-muted); }
+    .score-vs { font-size: 12px; color: var(--text-muted); text-transform: uppercase; }
+    .quarters {
+      display: flex; justify-content: center; gap: 12px; margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .quarter-box {
+      background: var(--bg-card); border: 1px solid var(--border-subtle);
+      border-radius: 8px; padding: 8px 14px; text-align: center; min-width: 60px;
+    }
+    .quarter-box .label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; }
+    .quarter-box .scores { font-size: 13px; margin-top: 2px; }
+    .tabs {
+      display: flex; gap: 6px; margin-bottom: 20px; flex-wrap: wrap;
+      border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px;
+    }
+    .tab-button {
+      padding: 8px 16px; border: 1px solid var(--border-subtle); border-radius: 20px;
+      background: transparent; color: var(--text-secondary); font-size: 13px;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .tab-button:hover { background: rgba(255,255,255,0.05); color: var(--text-primary); }
+    .tab-button.active {
+      background: linear-gradient(135deg, var(--accent-orange), var(--accent-purple));
+      color: white; border-color: transparent;
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border-subtle);
+      border-radius: 12px; margin-bottom: 16px; overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: var(--border-medium); }
+    .card-header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 20px; cursor: pointer;
+    }
+    .card-header:hover { background: var(--bg-card-hover); }
+    .card-title { font-size: 14px; font-weight: 600; letter-spacing: 0.5px; }
+    .card-subtitle { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+    .expand-icon {
+      font-size: 12px; color: var(--text-muted); transition: transform 0.3s;
+    }
+    .expand-icon.open { transform: rotate(90deg); }
+    .card-content {
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+      padding: 0 20px;
+    }
+    .card-content.open { max-height: 3000px; padding: 0 20px 20px; }
+    .quote {
+      border-left: 3px solid var(--accent-orange); padding: 12px 16px;
+      margin: 12px 0; background: rgba(255,140,66,0.05); border-radius: 0 8px 8px 0;
+      font-style: italic; font-size: 14px; line-height: 1.7; color: var(--text-primary);
+    }
+    .quote-attribution {
+      font-style: normal; font-size: 11px; color: var(--text-muted); margin-top: 6px;
+    }
+    .narrative {
+      font-size: 14px; line-height: 1.7; color: var(--text-secondary);
+      margin: 12px 0; padding: 0 4px;
+    }
+    .stat-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px; margin: 12px 0;
+    }
+    .stat-item {
+      background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);
+      border-radius: 8px; padding: 12px; text-align: center;
+    }
+    .stat-item .value { font-size: 20px; font-weight: 700; color: var(--accent-teal); }
+    .stat-item .value.bad { color: var(--danger); }
+    .stat-item .label { font-size: 10px; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; }
+    .box-score-table {
+      width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12px;
+    }
+    .box-score-table th {
+      text-align: left; padding: 8px 6px; font-size: 10px; text-transform: uppercase;
+      color: var(--text-muted); border-bottom: 1px solid var(--border-subtle);
+    }
+    .box-score-table td {
+      padding: 8px 6px; border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+    }
+    .box-score-table td:first-child { color: var(--text-primary); font-weight: 500; }
+    .box-score-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .team-comparison {
+      display: grid; grid-template-columns: 1fr auto 1fr; gap: 4px; margin: 12px 0;
+    }
+    .team-comparison .stat-label {
+      text-align: center; font-size: 10px; text-transform: uppercase; color: var(--text-muted);
+      padding: 6px 4px;
+    }
+    .team-comparison .stat-val {
+      padding: 6px 8px; font-size: 13px; font-weight: 600; border-radius: 4px;
+    }
+    .team-comparison .stat-val.left { text-align: right; }
+    .team-comparison .stat-val.right { text-align: left; }
+    .team-comparison .stat-val.highlight { color: var(--accent-teal); }
+    .alert-box {
+      background: rgba(255, 107, 107, 0.1); border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: 8px; padding: 14px 18px; margin: 12px 0;
+    }
+    .alert-box .alert-title { font-size: 12px; font-weight: 700; color: var(--danger); margin-bottom: 4px; text-transform: uppercase; }
+    .alert-box .alert-text { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+    .footer {
+      text-align: center; margin-top: 40px; padding: 20px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 12px; color: var(--text-muted);
+    }
+    .footer-logo { display: flex; justify-content: center; margin-bottom: 12px; }
+    .footer-logo svg { height: 28px; width: auto; opacity: 0.4; }
+  </style>
+</head>
+<body>
 <div class="container">
-  <div class="storyline-card">
-    <div class="label">⚡ Key Storyline</div>
-    <p>The Thunder dominated from start to finish in a <strong>136–109 blowout</strong>, leading by as many as 37 points. <strong>Jalen Williams</strong> was virtually perfect in his second game back from a 10-game absence, going <strong>11-of-12 from the field for 28 points in just 20 minutes</strong> before exiting late in the third quarter holding his right hamstring. The <strong>OKC bench exploded for 74 points</strong>, with <strong>Isaiah Joe</strong> catching fire for 21 points (6-of-8 from three) in 18 minutes. The Suns, missing <strong>Booker, Green, and Allen</strong> on the second night of a back-to-back, were outclassed from the opening tip. <strong>Dillon Brooks</strong> fought hard with 23 points but was a −27. Both teams now head into the All-Star break.</p>
-  </div>
-  <div class="three-col">
-    <div class="card key-num"><div class="val danger">74</div><div class="lbl">OKC bench points<br>vs. Suns' 37 from bench</div></div>
-    <div class="card key-num"><div class="val danger">37</div><div class="lbl">OKC's largest lead<br>late in the 3rd quarter</div></div>
-    <div class="card key-num"><div class="val normal">58.4%</div><div class="lbl">OKC FG%<br>52-of-89 shooting</div></div>
-  </div>
-  <div class="two-col">
-    <div class="card">
-      <div class="card-title"><span class="dot dot-orange"></span> Suns Box Score</div>
-      <div class="table-wrap"><table class="box-table">
-        <thead><tr><th>Player</th><th>MIN</th><th>PTS</th><th>FG</th><th>3PT</th><th>REB</th><th>AST</th><th>STL</th><th>+/-</th></tr></thead>
-        <tbody>
-          <tr><td>D. Brooks <span class="pos-tag">F</span></td><td>24</td><td class="high-pts">23</td><td>9-19</td><td>1-5</td><td>5</td><td>4</td><td>3</td><td>-27</td></tr>
-          <tr><td>R. O'Neale <span class="pos-tag">F</span></td><td>24</td><td>12</td><td>4-11</td><td>4-11</td><td>2</td><td>2</td><td>0</td><td>-24</td></tr>
-          <tr><td>M. Williams <span class="pos-tag">C</span></td><td>16</td><td>6</td><td>3-4</td><td>0-0</td><td>1</td><td>0</td><td>0</td><td>-20</td></tr>
-          <tr><td>J. Goodwin <span class="pos-tag">G</span></td><td>28</td><td>12</td><td>5-10</td><td>2-5</td><td>4</td><td>4</td><td>1</td><td>-32</td></tr>
-          <tr class="starter-sep"><td>C. Gillespie <span class="pos-tag">G</span></td><td>23</td><td>6</td><td>2-7</td><td>2-4</td><td>5</td><td>3</td><td>0</td><td>-18</td></tr>
-          <tr><td>O. Ighodaro</td><td>17</td><td>8</td><td>4-4</td><td>0-0</td><td>4</td><td>2</td><td>1</td><td>-14</td></tr>
-          <tr><td>R. Dunn</td><td>23</td><td>2</td><td>1-4</td><td>0-3</td><td>4</td><td>1</td><td>0</td><td>-12</td></tr>
-          <tr><td>A. Coffey</td><td>20</td><td>9</td><td>3-8</td><td>1-4</td><td>2</td><td>0</td><td>0</td><td>-14</td></tr>
-          <tr><td>R. Fleming</td><td>12</td><td>6</td><td>3-4</td><td>0-1</td><td>2</td><td>0</td><td>0</td><td>+5</td></tr>
-          <tr><td>K. Maluach</td><td>8</td><td>3</td><td>1-2</td><td>0-0</td><td>6</td><td>0</td><td>0</td><td>+1</td></tr>
-          <tr><td>K. Brea</td><td>8</td><td>6</td><td>2-2</td><td>2-2</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-          <tr><td>J. Bouyea</td><td>2</td><td>7</td><td>1-4</td><td>1-2</td><td>2</td><td>3</td><td>0</td><td>-1</td></tr>
-          <tr class="totals-row"><td>TEAM</td><td></td><td>109</td><td>43-92</td><td>15-42</td><td>43</td><td>26</td><td>4</td><td></td></tr>
-        </tbody>
-      </table></div>
-      <div style="margin-top:8px;font-size:0.72rem;color:var(--gray500);">DNP: D. Booker (ankle), J. Green (hamstring), G. Allen (knee)</div>
+  <!-- AVC LOGO BAR -->
+  <div class="avc-bar">
+    <div class="avc-logo-wrap" style="display:flex;align-items:center;gap:12px;">
+      <svg width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="28" stroke="#60a5fa" stroke-width="1.5" opacity="0.15"/>
+        <circle cx="32" cy="32" r="20" stroke="#60a5fa" stroke-width="2" opacity="0.35"/>
+        <circle cx="32" cy="32" r="13" stroke="#60a5fa" stroke-width="2.5" opacity="0.6"/>
+        <line x1="24" y1="32" x2="43" y2="32" stroke="#93c5fd" stroke-width="3.5" stroke-linecap="round"/>
+        <polyline points="37,25 44,32 37,39" stroke="#93c5fd" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <div style="width:1px;height:24px;background:rgba(96,165,250,0.3);"></div>
+      <div style="display:flex;flex-direction:column;gap:1px;">
+        <span style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#f0f0f8;line-height:1.2;">Accelerated</span>
+        <span style="font-size:10px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;color:#60a5fa;line-height:1.2;">Velocity</span>
+      </div>
+      <span class="avc-label">Ownership Intelligence</span>
     </div>
-    <div class="card">
-      <div class="card-title"><span class="dot dot-blue"></span> Thunder Box Score</div>
-      <div class="table-wrap"><table class="box-table">
-        <thead><tr><th>Player</th><th>MIN</th><th>PTS</th><th>FG</th><th>3PT</th><th>REB</th><th>AST</th><th>STL</th><th>+/-</th></tr></thead>
-        <tbody>
-          <tr><td>Jal. Williams <span class="pos-tag">F</span></td><td>20</td><td class="high-pts">28</td><td>11-12</td><td>4-5</td><td>4</td><td>5</td><td>0</td><td>+19</td></tr>
-          <tr><td>C. Holmgren <span class="pos-tag">C</span></td><td>21</td><td>13</td><td>4-8</td><td>0-1</td><td>4</td><td>2</td><td>0</td><td>+19</td></tr>
-          <tr><td>I. Hartenstein <span class="pos-tag">C</span></td><td>18</td><td>8</td><td>3-3</td><td>0-0</td><td>4</td><td>6</td><td>0</td><td>+20</td></tr>
-          <tr><td>L. Dort <span class="pos-tag">G</span></td><td>24</td><td>9</td><td>4-6</td><td>1-3</td><td>0</td><td>1</td><td>0</td><td>+15</td></tr>
-          <tr class="starter-sep"><td>C. Wallace <span class="pos-tag">G</span></td><td>26</td><td>4</td><td>2-7</td><td>0-3</td><td>4</td><td>3</td><td>0</td><td>+16</td></tr>
-          <tr><td>I. Joe</td><td>18</td><td class="high-pts">21</td><td>6-10</td><td>6-8</td><td>1</td><td>0</td><td>0</td><td>+18</td></tr>
-          <tr><td>K. Williams</td><td>23</td><td>15</td><td>6-9</td><td>2-3</td><td>6</td><td>2</td><td>1</td><td>+20</td></tr>
-          <tr><td>Jay. Williams</td><td>28</td><td>11</td><td>4-8</td><td>1-5</td><td>6</td><td>5</td><td>0</td><td>+13</td></tr>
-          <tr><td>J. McCain</td><td>22</td><td>12</td><td>5-8</td><td>2-3</td><td>4</td><td>1</td><td>2</td><td>+22</td></tr>
-          <tr><td>A. Wiggins</td><td>25</td><td>12</td><td>6-13</td><td>0-3</td><td>3</td><td>2</td><td>1</td><td>+6</td></tr>
-          <tr><td>A. Caruso</td><td>8</td><td>0</td><td>0-1</td><td>0-1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-          <tr><td>B. Boeheim</td><td>8</td><td>3</td><td>1-4</td><td>1-4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-          <tr class="totals-row"><td>TEAM</td><td></td><td>136</td><td>52-89</td><td>15-36</td><td>37</td><td>28</td><td>6</td><td></td></tr>
-        </tbody>
-      </table></div>
-      <div style="margin-top:8px;font-size:0.72rem;color:var(--gray500);">DNP: S. Gilgeous-Alexander (abdomen), A. Mitchell (abdomen)</div>
+    <div class="avc-date">Feb 12, 2026</div>
+  </div>
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="header-title">SUNS POSTGAME DASHBOARD</div>
+      <div class="header-badge loss">✗ LOSS</div>
+    </div>
+    <div class="header-sub">
+      Oklahoma City Thunder 136, Phoenix Suns 109 — Feb 11, 2026 · Mortgage Matchup Center, Phoenix · Attendance: 17,071 · Suns 32-23 (18-10 Home)
     </div>
   </div>
-  <div class="card">
-    <div class="card-title"><span class="dot dot-orange"></span> Team Stats Comparison</div>
-    <div class="compare-row"><div class="compare-val">109</div><div class="compare-label">Points</div><div class="compare-val better">136</div></div>
-    <div class="compare-row"><div class="compare-val">43-92 (46.7%)</div><div class="compare-label">Field Goals</div><div class="compare-val better">52-89 (58.4%)</div></div>
-    <div class="compare-row"><div class="compare-val">15-42 (35.7%)</div><div class="compare-label">3-Pointers</div><div class="compare-val better">15-36 (41.7%)</div></div>
-    <div class="compare-row"><div class="compare-val">8-13 (61.5%)</div><div class="compare-label">Free Throws</div><div class="compare-val better">17-19 (89.5%)</div></div>
-    <div class="compare-row"><div class="compare-val better">43</div><div class="compare-label">Rebounds</div><div class="compare-val">37</div></div>
-    <div class="compare-row"><div class="compare-val">26</div><div class="compare-label">Assists</div><div class="compare-val better">28</div></div>
-    <div class="compare-row"><div class="compare-val better">10</div><div class="compare-label">Turnovers</div><div class="compare-val">8</div></div>
-    <div class="compare-row"><div class="compare-val">37</div><div class="compare-label">Bench Points</div><div class="compare-val better">74</div></div>
-    <div class="compare-footer"><span style="color:var(--purple);">PHX (32-23)</span><span style="color:var(--thunder-blue);">OKC (42-13)</span></div>
+  <!-- SCORE BAR -->
+  <div class="score-bar">
+    <div class="score-team">
+      <div class="name">PHX SUNS (32-23)</div>
+      <div class="score loser">109</div>
+    </div>
+    <div class="score-vs">FINAL</div>
+    <div class="score-team">
+      <div class="name">OKC THUNDER (42-13)</div>
+      <div class="score winner">136</div>
+    </div>
   </div>
-  <div class="card">
-    <div class="card-title"><span class="dot dot-orange"></span> Postgame Quotes</div>
-    <div class="quote-block"><div class="quote-text">“It’s an opportunity for everyone against a good team. Second night of a back-to-back, headed into All-Star weekend — I think we all look at it as an opportunity, not just those guys. We have another night to go out, play as hard as we possibly can, put some pressure on them defensively and find new solutions.”</div><div class="quote-attr">— Jordan Ott, Head Coach (pre-game)</div></div>
-    <div class="quote-block"><div class="quote-text">“No matter who you have on the floor, they’re an elite defense for a reason. So when you get a crack, you got to let it go, knowing that you may not get another one in the possession.”</div><div class="quote-attr">— Jordan Ott, on OKC’s defense</div></div>
-    <div class="quote-block"><div class="quote-text">“I got a lot of stuff to learn, a lot of stuff to go over, but at the end of the day, you still got to do your job. So, that stuff will come. But still got to go out and compete.”</div><div class="quote-attr">— Amir Coffey, on his first game with Phoenix</div></div>
-    <div class="quote-block"><div class="quote-text">“We’re a 3-point shooting team, so I’m there on behalf of Collin [Gillespie], Royce [O’Neale], and Grayson [Allen].”</div><div class="quote-attr">— Devin Booker, on All-Star 3-Point Contest invitation</div></div>
+  <!-- QUARTERS -->
+  <div class="quarters">
+    <div class="quarter-box"><div class="label">Q1</div><div class="scores">25-37</div></div>
+    <div class="quarter-box"><div class="label">Q2</div><div class="scores">27-38</div></div>
+    <div class="quarter-box"><div class="label">Q3</div><div class="scores">24-37</div></div>
+    <div class="quarter-box"><div class="label">Q4</div><div class="scores">33-24</div></div>
   </div>
-  <div class="game-notes">
-    <div class="label">📋 Game Notes</div>
-    <p>• Suns enter the <strong>All-Star break at 32–23</strong> (7th in the West) despite missing their top three guards tonight<br>• OKC improves to <strong>42–13</strong>, best record in the NBA — <strong>4th straight game without SGA</strong> and still cruising<br>• Jalen Williams <strong>left late in Q3 holding his right hamstring</strong> — hoping the All-Star break gives him time to recover<br>• <strong>Amir Coffey</strong> made his Suns debut after being acquired from the Bucks at the trade deadline<br>• <strong>Jared McCain</strong> (acquired from Philadelphia) scored 12 points on 5-of-8 in 22 minutes in extended action for OKC<br>• OKC shot <strong>11-of-18 from three (61.1%) in the first half</strong>, building a 75–52 halftime lead<br>• Dillon Brooks received a <strong>one-game suspension</strong> after picking up his 16th technical foul the prior game vs. Dallas<br>• Attendance: <strong>17,071</strong> • Officials: James Williams, Dedric Taylor, J.T. Orr</p>
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab-button active" onclick="showTab(event,'overview')">Overview</button>
+    <button class="tab-button" onclick="showTab(event,'box')">Box Score</button>
+    <button class="tab-button" onclick="showTab(event,'suns')">Suns Quotes</button>
+    <button class="tab-button" onclick="showTab(event,'thunder')">Thunder Context</button>
+    <button class="tab-button" onclick="showTab(event,'reactions')">Reactions</button>
+    <button class="tab-button" onclick="showTab(event,'themes')">Key Themes</button>
+    <button class="tab-button" onclick="showTab(event,'next')">Next Game</button>
   </div>
-  <div class="card"><div class="card-title"><span class="dot dot-green"></span> What’s Next</div><p style="font-size:0.9rem;color:var(--gray700);line-height:1.7;"><strong>All-Star Break</strong> — The Suns don’t play again until <strong>Thursday, February 19 at San Antonio</strong>. Devin Booker will participate in the <strong>3-Point Contest</strong> during All-Star Weekend in San Francisco. After the break, Phoenix has 27 games remaining to solidify their playoff positioning.</p></div>
-  <div class="card"><div class="card-title"><span class="dot dot-blue"></span> Season Series — OKC leads 3-1</div><div class="table-wrap"><table class="box-table" style="font-size:0.8rem;"><thead><tr><th>Date</th><th>Location</th><th>Result</th></tr></thead><tbody><tr><td>Nov 28</td><td>@ OKC</td><td style="color:var(--red);">L 119-138</td></tr><tr><td>Dec 10</td><td>@ OKC</td><td style="color:var(--red);">L 89-105</td></tr><tr><td>Jan 4</td><td>vs OKC</td><td style="color:var(--green);font-weight:600;">W 108-105</td></tr><tr><td>Feb 11</td><td>vs OKC</td><td style="color:var(--red);">L 109-136</td></tr><tr><td>Apr 12</td><td>@ OKC</td><td style="color:var(--gray500);">5:30 PM</td></tr></tbody></table></div></div>
-  <div class="avc-footer"><div class="footer-logo"><svg width="20" height="20" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="28" stroke="#60a5fa" stroke-width="1.5" opacity="0.15"/><circle cx="32" cy="32" r="20" stroke="#60a5fa" stroke-width="2" opacity="0.35"/><circle cx="32" cy="32" r="13" stroke="#60a5fa" stroke-width="2.5" opacity="0.6"/><line x1="24" y1="32" x2="43" y2="32" stroke="#93c5fd" stroke-width="3.5" stroke-linecap="round"/><polyline points="37,25 44,32 37,39" stroke="#93c5fd" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span class="footer-text">Built by <strong>Accelerated Velocity Consulting</strong></span></div><div class="footer-right">Final • Feb 11, 2026</div></div>
+
+  <!-- ============ OVERVIEW TAB ============ -->
+  <div id="overview" class="tab-content active">
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">GAME SUMMARY</div>
+          <div class="card-subtitle">Short-handed Suns overwhelmed by defending champs</div>
+        </div>
+        <div class="expand-icon open">&#9654;</div>
+      </div>
+      <div class="card-content open">
+        <div class="alert-box">
+          <div class="alert-title">&#9888; Key Absences</div>
+          <div class="alert-text">
+            <strong>OUT — Devin Booker</strong> (ankle), <strong>Jalen Green</strong> (hamstring), <strong>Grayson Allen</strong> (knee). Ott elected to rest Booker and Green on the second night of a back-to-back, prioritizing health heading into the All-Star break.
+          </div>
+        </div>
+        <div class="narrative">
+          The Suns never had a chance. Oklahoma City — even without Shai Gilgeous-Alexander — jumped out to a 37-25 first-quarter lead behind 9 early points from Luguentz Dort and never looked back. The Thunder shot 11-of-18 (61.1%) from three in the first half alone, building a 75-52 halftime advantage. Jalen Williams was virtually unstoppable, going 11-of-11 from the field before his only miss, scoring 19 of his 28 points in the third quarter and pushing OKC's lead to 37. Seven Thunder players scored in double figures. Dillon Brooks led Phoenix with 23 points but picked up his 16th technical foul of the season, triggering an automatic one-game suspension after the All-Star break. The fourth quarter was garbage time, allowing rookies Rasheer Fleming, Khaman Maluach, and Koby Brea to log developmental minutes.
+        </div>
+        <div class="stat-grid">
+          <div class="stat-item"><div class="value bad">37</div><div class="label">Largest Deficit</div></div>
+          <div class="stat-item"><div class="value bad">58.4%</div><div class="label">OKC FG%</div></div>
+          <div class="stat-item"><div class="value bad">74</div><div class="label">OKC Bench Pts</div></div>
+          <div class="stat-item"><div class="value">23</div><div class="label">Suns High (Brooks)</div></div>
+          <div class="stat-item"><div class="value bad">7</div><div class="label">OKC Double-Fig</div></div>
+          <div class="stat-item"><div class="value bad">75-52</div><div class="label">Halftime</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">KEY PERFORMERS — SUNS</div>
+          <div class="card-subtitle">Brooks leads scoring; Bouyea steps up with 11 & 6</div>
+        </div>
+        <div class="expand-icon">&#9654;</div>
+      </div>
+      <div class="card-content">
+        <div class="narrative">
+          <strong>Dillon Brooks (23 pts, 5 reb)</strong> — Led the team in scoring for the second consecutive night. Carried the offensive load without Booker and Green but also picked up his 16th technical foul, earning an automatic one-game suspension. His competitive fire is a double-edged sword.<br><br>
+          <strong>Royce O'Neale (12 pts)</strong> — Continued his reliable floor-spacing role. Hit threes to keep Phoenix within shouting distance in the first half when it mattered.<br><br>
+          <strong>Jordan Goodwin (12 pts, 4 reb)</strong> — Solid effort on both ends. One of the few Suns who competed hard from wire to wire despite the deficit.<br><br>
+          <strong>Jamaree Bouyea (11 pts, 6 ast)</strong> — Stepped into a starting role with Booker and Green out and delivered the best assist total on the team. Showed he can run an offense in emergency duty — a useful data point for the front office.<br><br>
+          <strong>Mark Williams</strong> — Contributed on the interior with dunks and alley-oops (6 pts in Q1) but couldn't match OKC's length, particularly Holmgren and Jaylin Williams, on the glass.<br><br>
+          <strong>Amir Coffey (second game)</strong> — In his second game since arriving at the deadline, Coffey continued adjusting to the system. Limited role in a blowout context but got additional reps.<br><br>
+          <strong>Rookies: Fleming, Maluach, Brea</strong> — All received extended garbage-time minutes in the fourth quarter. Developmental reps that matter for long-term roster evaluation.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">TEAM COMPARISON</div>
+          <div class="card-subtitle">PHX vs OKC head-to-head stats</div>
+        </div>
+        <div class="expand-icon">&#9654;</div>
+      </div>
+      <div class="card-content">
+        <div class="team-comparison">
+          <div class="stat-val left">~42%</div><div class="stat-label">FG%</div><div class="stat-val right highlight">58.4%</div>
+          <div class="stat-val left">~30%</div><div class="stat-label">3PT%</div><div class="stat-val right highlight">61.1% (1H)</div>
+          <div class="stat-val left">109</div><div class="stat-label">PTS</div><div class="stat-val right highlight">136</div>
+          <div class="stat-val left">—</div><div class="stat-label">BENCH PTS</div><div class="stat-val right highlight">74</div>
+          <div class="stat-val left">—</div><div class="stat-label">DBL FIG SCORERS</div><div class="stat-val right highlight">7</div>
+          <div class="stat-val left">25</div><div class="stat-label">Q1</div><div class="stat-val right highlight">37</div>
+          <div class="stat-val left">52</div><div class="stat-label">HALFTIME</div><div class="stat-val right highlight">75</div>
+          <div class="stat-val left highlight">33</div><div class="stat-label">Q4</div><div class="stat-val right">24</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ BOX SCORE TAB ============ -->
+  <div id="box" class="tab-content">
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">SUNS BOX SCORE</div>
+          <div class="card-subtitle">Key players · Brooks 23, O'Neale 12, Goodwin 12, Bouyea 11</div>
+        </div>
+        <div class="expand-icon open">&#9654;</div>
+      </div>
+      <div class="card-content open">
+        <div style="overflow-x:auto;">
+          <table class="box-score-table">
+            <thead><tr><th>Player</th><th>PTS</th><th>REB</th><th>AST</th><th>STL</th><th>BLK</th><th>FG</th><th>3PT</th><th>FT</th></tr></thead>
+            <tbody>
+              <tr><td>D. Brooks (F)</td><td><strong>23</strong></td><td>5</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>R. O'Neale (F)</td><td><strong>12</strong></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>4-*</td><td>—</td></tr>
+              <tr><td>J. Goodwin (G)</td><td><strong>12</strong></td><td>4</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>J. Bouyea (G)</td><td><strong>11</strong></td><td>—</td><td>6</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>M. Williams (C)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>C. Gillespie (G)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>O. Ighodaro (F)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>A. Coffey (G/F)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>R. Fleming (F)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>K. Maluach (C)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            </tbody>
+          </table>
+          <div class="narrative" style="font-size:11px;color:var(--text-muted);margin-top:4px;">
+            &#9432; Full individual splits (FG/3PT/FT breakdowns for supporting players) were not available in post-deadline wire coverage. Confirmed totals: Brooks 23, O'Neale 12, Goodwin 12, Bouyea 11 pts / 6 ast. See <a href="https://www.nba.com/game/okc-vs-phx-0022500785/box-score" style="color:var(--accent-teal);" target="_blank">NBA.com</a> or <a href="https://www.espn.com/nba/boxscore/_/gameId/401810640" style="color:var(--accent-teal);" target="_blank">ESPN</a> for complete splits.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">THUNDER BOX SCORE</div>
+          <div class="card-subtitle">J. Williams 28 (11-12 FG) • Joe 21 • 7 players in double figures</div>
+        </div>
+        <div class="expand-icon">&#9654;</div>
+      </div>
+      <div class="card-content">
+        <div style="overflow-x:auto;">
+          <table class="box-score-table">
+            <thead><tr><th>Player</th><th>PTS</th><th>REB</th><th>AST</th><th>STL</th><th>BLK</th><th>FG</th><th>3PT</th><th>MIN</th></tr></thead>
+            <tbody>
+              <tr><td>Jalen Williams (F)</td><td><strong>28</strong></td><td>4</td><td>5</td><td>—</td><td>—</td><td>11-12</td><td>2-2</td><td>~20</td></tr>
+              <tr><td>Isaiah Joe (G)</td><td><strong>21</strong></td><td>1</td><td>1</td><td>—</td><td>—</td><td>6-10</td><td>6-8</td><td>—</td></tr>
+              <tr><td>Kenrich Williams (F)</td><td><strong>15</strong></td><td>6</td><td>2</td><td>1</td><td>1</td><td>6-9</td><td>2-3</td><td>—</td></tr>
+              <tr><td>C. Holmgren (C)</td><td><strong>13</strong></td><td>4</td><td>2</td><td>—</td><td>—</td><td>4-8</td><td>0-1</td><td>~21</td></tr>
+              <tr><td>J. McCain (G)</td><td><strong>12</strong></td><td>4</td><td>—</td><td>2</td><td>—</td><td>5-8</td><td>2-3</td><td>22</td></tr>
+              <tr><td>Jaylin Williams (F)</td><td><strong>11</strong></td><td>6</td><td>5</td><td>—</td><td>3</td><td>—</td><td>—</td><td>28</td></tr>
+              <tr><td>L. Dort (G)</td><td><strong>9</strong></td><td>—</td><td>1</td><td>—</td><td>—</td><td>4-6</td><td>1-3</td><td>24</td></tr>
+            </tbody>
+          </table>
+          <div class="narrative" style="font-size:11px;color:var(--text-muted);margin-top:4px;">
+            &#9432; OKC had 74 bench points. Seven players scored in double figures. See full splits at <a href="https://www.nba.com/game/okc-vs-phx-0022500785/box-score" style="color:var(--accent-teal);" target="_blank">NBA.com</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SUNS QUOTES TAB ============ -->
+  <div id="suns" class="tab-content">
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">HEAD COACH — JORDAN OTT</div>
+          <div class="card-subtitle">Blunt postgame assessment, strategic rest decision</div>
+        </div>
+        <div class="expand-icon open">&#9654;</div>
+      </div>
+      <div class="card-content open">
+        <div class="narrative">
+          Ott was candid about the team's energy level on the second night of a back-to-back, while defending the decision to rest Booker and Green heading into the All-Star break. He was sympathetic to Brooks' technical foul situation, noting the frustration was shared across the bench.
+        </div>
+        <div class="quote">
+          "From jump street, we just didn't have it."
+          <div class="quote-attribution">On the team's energy from the opening tip</div>
+        </div>
+        <div class="quote">
+          "Dillon gets into those interactions every night. It's just up to whether the whistle is blown or not. Everyone was frustrated. Everyone on our sideline was frustrated with how that was in the second half."
+          <div class="quote-attribution">On Brooks' 16th technical foul and officiating</div>
+        </div>
+        <div class="narrative" style="margin-top:8px;padding:10px 14px;background:rgba(255,140,66,0.08);border-left:3px solid var(--accent-orange);border-radius:6px;">
+          <strong style="color:var(--accent-orange);">&#128204; Ownership Note:</strong> Ott's decision to rest Booker and Green was a clear long-view play — prioritizing health for the stretch run over a regular-season game against a team they may face in the playoffs. The "from jump street" quote signals he accepted this outcome as collateral from the rest decision. Not a coaching concern; this was calculated.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">DILLON BROOKS | F — 16TH TECHNICAL FOUL</div>
+          <div class="card-subtitle">23 PTS • 5 REB • Season-high 16 techs → 1-game suspension</div>
+        </div>
+        <div class="expand-icon open">&#9654;</div>
+      </div>
+      <div class="card-content open">
+        <div class="alert-box">
+          <div class="alert-title">&#9888; Suspension Alert</div>
+          <div class="alert-text">
+            Brooks' 16th technical triggers an <strong>automatic one-game suspension</strong> following the All-Star break. He will miss the Feb. 19 game at San Antonio unless the league rescinds the tech. Additional fine of <strong>$5,000</strong>. Every two techs after 16 results in another one-game suspension.
+          </div>
+        </div>
+        <div class="narrative">
+          Brooks was assessed his 16th technical in the second quarter after arguing with official James Williams on a foul call against Thunder guard Jared McCain with the Suns down 18. Brooks says the official told him he was "playing the victim too much." He leads the league in technical fouls this season.
+        </div>
+        <div class="quote">
+          "If you're going to be consistently bad, then be consistently bad throughout the whole game. Don't try to fix it during the game. Don't try to be doing any of that, or try to even out foul calls or whatever it may be."
+          <div class="quote-attribution">On officiating consistency postgame</div>
+        </div>
+        <div class="narrative" style="margin-top:8px;padding:10px 14px;background:rgba(255,140,66,0.08);border-left:3px solid var(--accent-orange);border-radius:6px;">
+          <strong style="color:var(--accent-orange);">&#128204; Ownership Note:</strong> Brooks' competitive fire is a feature, not a bug — his 21.2 ppg on career-high shooting (44.1% FG) and 17.6 FGA per game reflect his importance to the offense. But 16 techs is a real cost: $5K fine plus the suspension. The risk compounds if he picks up two more (another suspension). Worth a private conversation about channeling intensity without crossing the line, especially in playoff-critical stretches. Ott's public defense of Brooks ("everyone was frustrated") is the right messaging to keep the player bought in.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">JAMAREE BOUYEA | G</div>
+          <div class="card-subtitle">11 PTS • 6 AST — Emergency starter stepped up</div>
+        </div>
+        <div class="expand-icon">&#9654;</div>
+      </div>
+      <div class="card-content">
+        <div class="narrative">
+          With Booker and Green both out, Bouyea was pressed into a primary ball-handling role and responded with 11 points and a team-high 6 assists. He showed poise running the offense against the league's best record. While the team was overwhelmed, Bouyea's performance validates the depth investment — when called upon in emergency duty, he can keep the offense functional.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">JORDAN GOODWIN | G</div>
+          <div class="card-subtitle">12 PTS • 4 REB — Competed wire-to-wire</div>
+        </div>
+        <div class="expand-icon">&#9654;</div>
+      </div>
+      <div class="card-content">
+        <div class="narrative">
+          Goodwin brought his trademark energy and effort. One of the few Suns who never stopped competing despite the deficit. His 12 points and 4 rebounds in a losing effort reinforce his value as a glue guy who doesn't take nights off — a quality that matters in playoff rotations.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">ROYCE O'NEALE | F</div>
+          <div class="card-subtitle">12 PTS — Steady spacing presence</div>
+        </div>
+        <div class="expand-icon">&#9654;</div>
+      </div>
+      <div class="card-content">
+        <div class="narrative">
+          O'Neale continued his reliable floor-spacing role with 12 points, including multiple threes that kept the first half from spiraling even further. Consecutive games with 12 points demonstrate his consistency, even in ugly losses. His veteran steadiness is the kind of roster insurance that pays dividends when stars return.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">ROOKIE MINUTES — FLEMING, MALUACH, BREA</div>
+          <div class="card-subtitle">Garbage-time developmental reps</div>
+        </div>
+        <div class="expand-icon">&#9654;</div>
+      </div>
+      <div class="card-content">
+        <div class="narrative">
+          With the game out of hand in the fourth quarter, Ott turned to the young players. <strong>Rasheer Fleming</strong> and <strong>Khaman Maluach</strong> both got extended court time, as did <strong>Koby Brea</strong>. While the stats don't move needles, the experience of NBA game speed against a defending champion's bench is valuable development time. These reps build confidence and help coaching staff evaluate roster depth for end-of-bench decisions.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ THUNDER CONTEXT TAB ============ -->
+  <div id="thunder" class="tab-content">
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">OKLAHOMA CITY CONTEXT</div>
+          <div class="card-subtitle">Defending champions • 42-13 • Won 4 of 6 • Also missing SGA</div>
+        </div>
+        <div class="expand-icon open">&#9654;</div>
+      </div>
+      <div class="card-content open">
+        <div class="narrative">
+          Oklahoma City dominated despite missing <strong>Shai Gilgeous-Alexander</strong> (abdominal strain, fourth straight game out) and <strong>Ajay Mitchell</strong> (abdominal strain). SGA — second in the league in scoring at 31.8 ppg — was not available, yet the Thunder's depth was absurd. Seven players scored in double figures. The bench produced 74 points.
+        </div>
+        <div class="narrative">
+          <strong>Jalen Williams</strong> was the headliner, scoring 28 points on 11-of-12 shooting — he didn't miss any of his first 11 shots. He poured in 19 of his 28 in the third quarter before checking himself out holding his hamstring. <strong>Isaiah Joe</strong> caught fire with 21 points on 6-of-8 from three — his third straight high-scoring game since the trade deadline, stepping up in SGA's absence. <strong>Kenrich Williams</strong> added 15 (6 rebounds, 4 offensive) and <strong>Jared McCain</strong>, in his most extensive action in a Thunder uniform, had 12 points with 2 steals in 22 minutes.
+        </div>
+        <div class="narrative">
+          <strong>Jaylin Williams</strong> (11 pts, 6 reb, 5 ast, 3 blk) was the statistical Swiss Army knife, contributing to every category. <strong>Chet Holmgren</strong> (13 pts, 5-5 FT) was efficient without needing to dominate.
+        </div>
+        <div class="narrative" style="margin-top:8px;padding:10px 14px;background:rgba(255,140,66,0.08);border-left:3px solid var(--accent-orange);border-radius:6px;">
+          <strong style="color:var(--accent-orange);">&#128204; Ownership Note:</strong> This game confirmed what the league already knows — OKC's depth is historically elite. They scored 136 without their best player. The Jalen Williams hamstring concern (checked himself out in Q3, only his second game back from a 10-game absence) is worth monitoring: if Williams misses time again, it changes OKC's ceiling and Phoenix's potential playoff path. Isaiah Joe's post-deadline surge (three consecutive high-scoring games) signals the Thunder's trade deadline acquisitions are already producing — a warning sign for the West.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ REACTIONS TAB ============ -->
+  <div id="reactions" class="tab-content">
+    <!-- THUNDER COACHING -->
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">&#127908; OKC COACHING STAFF</div>
+          <div class="card-subtitle">Thunder had little need for postgame strategy commentary</div>
+        </div>
+        <div class="expand-icon open">&#9654;</div>
+      </div>
+      <div class="card-content open">
+        <div class="narrative">
+          Oklahoma City's coaching staff had little explaining to do after a 27-point road win. The primary talking point was Jalen Williams' health — Williams checked himself out in the third quarter holding his hamstring (only his second game back from a 10-game hamstring absence). The Thunder were cruising so comfortably that their stars logged limited minutes: J. Williams played roughly 20 minutes, Holmgren 21, while role players ate up the remaining minutes in a controlled blowout.
+        </div>
+        <div class="narrative" style="margin-top:8px;padding:10px 14px;background:rgba(255,140,66,0.08);border-left:3px solid var(--accent-orange);border-radius:6px;">
+          <strong style="color:var(--accent-orange);">&#128204; Ownership Note:</strong> The limited minutes for OKC's starters are a silver lining for Phoenix. This wasn't a game where the Thunder had to exert themselves, meaning it provides minimal intel on how OKC would game-plan against a full-strength Suns roster. The Jalen Williams hamstring situation is the key variable — the Thunder being cautious with him suggests it's not fully resolved.
+        </div>
+      </div>
+    </div>
+    <!-- LOCAL MEDIA -->
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">&#128240; LOCAL MEDIA COVERAGE</div>
+          <div class="card-subtitle">Phoenix & OKC beat reporters</div>
+        </div>
+        <div class="expand-icon">&#9654;</div>
+      </div>
+      <div class="card-content">
+        <div class="narrative">
+          <strong>GOPHNX:</strong> Led with the headline "Suns Suffer 27-Point Loss To Thunder Without Booker, Green" — framing the loss as a direct consequence of rest decisions rather than a systemic failure. Emphasized the strategic nature of Ott's choice heading into the break.
+        </div>
+        <div class="narrative">
+          <strong>ArizonaSports.com:</strong> Reported the Suns were "blitzed by Thunder" and centered coverage on the back-to-back fatigue factor. Noted the Brooks technical foul suspension timeline and the All-Star break buffer.
+        </div>
+        <div class="narrative">
+          <strong>Bright Side of the Sun:</strong> Recap titled "Suns fall flat, enter ASB with loss" — but accompanied by a companion analysis piece titled "The Suns chose the long view against Oklahoma City," explicitly framing the loss as acceptable. Noted Suns have lost 3 of last 4 heading into the break.
+        </div>
+        <div class="narrative">
+          <strong>BurnCitySports:</strong> Covered the blowout with context on the rest decisions. Reported on Brooks' suspension timeline and Ott's postgame comments defending Brooks.
+        </div>
+        <div class="narrative">
+          <strong>EssentiallySports:</strong> Led with the Brooks technical foul story — headlined "Dillon Brooks Set to Lose Six Figures Post All-Star After Heated Moment vs OKC Thunder." Focused on the financial and competitive cost of Brooks' tech accumulation.
+        </div>
+        <div class="narrative">
+          <strong>Daily Thunder / Thunder beat:</strong> "Day After Report" focused on Jalen Williams' 11-of-12 shooting night and the depth performance. Called Isaiah Joe's surge a "fire lit underneath him" since the trade deadline. Noted concern about Williams leaving with a hamstring issue.
+        </div>
+        <div class="narrative" style="margin-top:8px;padding:10px 14px;background:rgba(255,140,66,0.08);border-left:3px solid var(--accent-orange);border-radius:6px;">
+          <strong style="color:var(--accent-orange);">&#128204; Ownership Note:</strong> Local Suns media universally framed this as a strategic rest game, not a panic point. The "long view" narrative from Bright Side of the Sun is the dominant framing in the Phoenix ecosystem. The Brooks suspension story has legs (EssentiallySports, BurnCitySports) — expect it to resurface when the Suns return from the break. OKC media focused on their own players; minimal attention paid to Phoenix.
+        </div>
+      </div>
+    </div>
+    <!-- NATIONAL MEDIA -->
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">&#127760; NATIONAL MEDIA</div>
+          <div class="card-subtitle">ESPN, AP Wire, SI, NBA.com, ClutchPoints</div>
+        </div>
+        <div class="expand-icon">&#9654;</div>
+      </div>
+      <div class="card-content">
+        <div class="narrative">
+          <strong>AP Wire (syndicated nationally):</strong> Standard game recap emphasizing Jalen Williams' 28-point performance, OKC's 58.4% shooting, and the mutual star absences. Headline: "Jalen Williams scores 28 points and the Thunder cruise past the Suns, 136-109." Syndicated to 20+ outlets including WTOP, Daily Gazette, Yahoo Sports, KOCO, KFOR.
+        </div>
+        <div class="narrative">
+          <strong>ESPN:</strong> Standard game recap. Framed as Thunder dominance rather than Suns collapse. Noted the 8-player absence context on both sides.
+        </div>
+        <div class="narrative">
+          <strong>Sports Illustrated (Suns beat):</strong> Published "Suns Set New Franchise Worst in Loss to Thunder" — indicating a historic stat line (likely related to first-half deficit or shooting numbers). This headline has negative optics but the article provides injury context.
+        </div>
+        <div class="narrative">
+          <strong>NBA.com (Suns site):</strong> Official game recap titled "Game Recap: Thunder 136, Suns 109" — straightforward, stats-driven coverage emphasizing the rest decisions and All-Star break timing.
+        </div>
+        <div class="narrative">
+          <strong>ClutchPoints:</strong> Covered Brooks' 16th technical and his quotes putting refs "on blast." Focused on the confrontational narrative that generates clicks.
+        </div>
+        <div class="narrative">
+          <strong>Fadeaway World:</strong> Published "Thunder Player Ratings: Williams Has All-Star Performance" — focused entirely on OKC's dominance. Phoenix barely mentioned.
+        </div>
+        <div class="narrative" style="margin-top:8px;padding:10px 14px;background:rgba(255,140,66,0.08);border-left:3px solid var(--accent-orange);border-radius:6px;">
+          <strong style="color:var(--accent-orange);">&#128204; Ownership Note:</strong> National framing is overwhelmingly about OKC's depth, not Phoenix's failure. The "franchise worst" SI headline is the biggest optics risk — worth monitoring to see if it gains traction. However, the mutual-absence context (no SGA, no Booker/Green) significantly dilutes the narrative. National outlets are already pivoting to All-Star Weekend coverage. This game will be forgotten quickly.
+        </div>
+      </div>
+    </div>
+    <!-- SOCIAL MEDIA -->
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">&#128241; SOCIAL MEDIA & PODCASTS</div>
+          <div class="card-subtitle">X (Twitter), fan sentiment, podcast coverage</div>
+        </div>
+        <div class="expand-icon">&#9654;</div>
+      </div>
+      <div class="card-content">
+        <div class="narrative">
+          <strong>X / Twitter — Dominant Themes:</strong>
+        </div>
+        <div class="narrative" style="padding-left:12px;border-left:2px solid var(--accent-purple);">
+          &#8226; Brooks' 16th tech and suspension dominated Suns fan discourse — split between "that's who he is" acceptance and frustration at the competitive cost<br>
+          &#8226; Fan frustration muted by widespread understanding that Booker and Green were rested intentionally<br>
+          &#8226; Jalen Williams' 11-of-12 shooting was the most-shared stat line from the game<br>
+          &#8226; "Strategic rest" framing gained traction among Suns fans — many tweeting "this game doesn't count"<br>
+          &#8226; All-Star Weekend anticipation (Booker in 3-Point Contest + All-Star Game) overshadowed the loss
+        </div>
+        <div class="narrative" style="margin-top:12px;">
+          <strong>Podcasts / YouTube:</strong>
+        </div>
+        <div class="narrative" style="padding-left:12px;border-left:2px solid var(--accent-teal);">
+          &#8226; <strong>Bright Side of the Sun</strong> — Published analysis piece framing the loss as an acceptable "long view" decision by the coaching staff<br>
+          &#8226; <strong>PHNX Suns / GOPHNX</strong> — Coverage centered on the rest decision, Brooks suspension, and looking ahead to the post-break stretch<br>
+          &#8226; <strong>Daily Thunder</strong> — "Day After Report" praised Jalen Williams' efficiency, noted hamstring concern
+        </div>
+        <div class="narrative" style="margin-top:8px;padding:10px 14px;background:rgba(255,140,66,0.08);border-left:3px solid var(--accent-orange);border-radius:6px;">
+          <strong style="color:var(--accent-orange);">&#128204; Ownership Note:</strong> Social sentiment is surprisingly calm for a 27-point home loss. The "strategic rest" narrative gave fans a framework to dismiss the result, and All-Star excitement provided a natural pivot. The Brooks suspension is the only story with legs beyond tonight. No panic in the fanbase — the 32-23 record provides a comfort cushion.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ KEY THEMES TAB ============ -->
+  <div id="themes" class="tab-content">
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">OWNERSHIP THEMES</div>
+          <div class="card-subtitle">Signals for Mat Ishbia / front office</div>
+        </div>
+        <div class="expand-icon open">&#9654;</div>
+      </div>
+      <div class="card-content open">
+        <div class="narrative">
+          <strong>1. The rest decision was correct.</strong> Ott's choice to sit Booker (ankle) and Green (hamstring) on the second night of a back-to-back before a week-long All-Star break was the right call. Both players were back from injuries just one night earlier. The 27-point loss is the cost of prioritizing March-June health over a February regular-season game. There is no universe in which risking re-injury to either player for this game makes strategic sense.
+        </div>
+        <div class="narrative">
+          <strong>2. Brooks' tech situation requires internal management.</strong> 16 technicals and a one-game suspension is a leadership issue that needs to be addressed privately. Brooks is averaging career highs across the board (21.2 ppg, 44.1% FG, 17.6 FGA) and his competitive intensity is a core part of his value — but the suspensions create real competitive cost. Missing the Spurs game on Feb. 19 is manageable; missing playoff games would be devastating. The front office and Ott should have a calibrated conversation: validate the fire, redirect the expression.
+        </div>
+        <div class="narrative">
+          <strong>3. Depth passed the stress test — partially.</strong> Without three rotation guards (Booker, Green, Allen), the Suns scored 109 against the league's best team. Bouyea (11/6) showed he can function as an emergency point guard. Goodwin and O'Neale provided their usual reliability. The bad news: the drop-off from Booker/Green to Bouyea/Gillespie is massive, and OKC's bench (74 points, 7 double-figure scorers) exposed the gap. This is expected but confirms the Suns' ceiling is star-dependent.
+        </div>
+        <div class="narrative">
+          <strong>4. OKC is a different animal — even without SGA.</strong> The Thunder scored 136 without their best player. Their 58.4% field goal shooting and 74 bench points represent a systemic advantage, not a one-off. If the Suns face OKC in the playoffs, the game plan must account for this depth. The Jalen Williams hamstring concern is the one vulnerability to monitor — if he misses significant time again, OKC's ceiling drops meaningfully.
+        </div>
+        <div class="narrative">
+          <strong>5. All-Star break timing is a gift.</strong> The Suns enter the break at 32-23 — firmly in the playoff picture — with Booker headed to the 3-Point Contest and All-Star Game. The break provides recovery time for Booker's ankle, Green's hamstring, and Allen's knee. It also gives Amir Coffey time to absorb the playbook and Brooks time to decompress before the suspension game. The narrative heading into the break is: healthy and positioned, not desperate and crumbling.
+        </div>
+        <div class="narrative">
+          <strong>6. Three losses in four games is a trend to monitor, not a crisis.</strong> The Suns lost to Golden State (101-97), Philadelphia (109-103), and now OKC (136-109) after beating Portland. The Warriors and Sixers losses were competitive; this one was a rest-game outlier. If the losing continues post-break, it becomes a genuine concern. For now, the underlying data (Booker back, Green back, Coffey added, depth performing) supports optimism.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ NEXT GAME TAB ============ -->
+  <div id="next" class="tab-content">
+    <div class="card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div>
+          <div class="card-title">NEXT GAME: @ SAN ANTONIO SPURS</div>
+          <div class="card-subtitle">Thursday, Feb 19, 2026 • Road • First game after All-Star break</div>
+        </div>
+        <div class="expand-icon open">&#9654;</div>
+      </div>
+      <div class="card-content open">
+        <div class="alert-box">
+          <div class="alert-title">&#9888; Brooks Suspended</div>
+          <div class="alert-text">
+            Dillon Brooks will serve his <strong>one-game suspension</strong> for the San Antonio game (unless the league rescinds his 16th technical foul). The Suns will need to replace his 21.2 ppg and defensive intensity for one night.
+          </div>
+        </div>
+        <div class="narrative">
+          The Suns return from the All-Star break with a road game in San Antonio. This is a manageable opponent, but the Brooks suspension means Phoenix will be down their leading scorer.
+        </div>
+        <div class="narrative">
+          <strong>Expected Returns:</strong> Devin Booker (ankle) and Jalen Green (hamstring) should both be available after the break. The extended rest provides recovery time that Ott explicitly prioritized by sitting them against OKC. Grayson Allen (knee) remains the wildcard — his reevaluation timeline post-break will determine if he's available.
+        </div>
+        <div class="narrative">
+          <strong>What to Watch:</strong> How does the offense function without Brooks' 17.6 shot attempts per game? Who absorbs his usage — Green, Coffey, Goodwin? The Spurs game is a low-stakes opportunity to preview lineup configurations for a potential future Brooks suspension scenario (if he accumulates more techs). Coffey's integration into the system will have had a full week of practice by then.
+        </div>
+        <div class="narrative">
+          <strong>All-Star Weekend:</strong> Devin Booker participates in the 3-Point Contest (Saturday) and the All-Star Game (Sunday). Positive brand visibility for the franchise.
+        </div>
+        <div class="narrative" style="margin-top:8px;padding:10px 14px;background:rgba(255,140,66,0.08);border-left:3px solid var(--accent-orange);border-radius:6px;">
+          <strong style="color:var(--accent-orange);">&#128204; Ownership Note:</strong> The Spurs game is a soft landing for the post-break schedule. Even without Brooks, a Booker/Green-led lineup should be competitive in San Antonio. The real test comes in March when the schedule intensifies. The break is an opportunity: let bodies heal, let Coffey learn, let the coaching staff game-plan for the stretch run. Phoenix is positioned well at 32-23 — the goal is to enter March healthy and with continuity.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-logo" style="display:flex;align-items:center;gap:8px;">
+      <svg width="20" height="20" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="28" stroke="#60a5fa" stroke-width="1.5" opacity="0.15"/>
+        <circle cx="32" cy="32" r="20" stroke="#60a5fa" stroke-width="2" opacity="0.35"/>
+        <circle cx="32" cy="32" r="13" stroke="#60a5fa" stroke-width="2.5" opacity="0.6"/>
+        <line x1="24" y1="32" x2="43" y2="32" stroke="#93c5fd" stroke-width="3.5" stroke-linecap="round"/>
+        <polyline points="37,25 44,32 37,39" stroke="#93c5fd" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <span style="color:#7a7a94;font-size:0.7rem;">Built by <strong style="color:#60a5fa;font-weight:600;">Accelerated Velocity Consulting</strong></span>
+    </div>
+    <p>Phoenix Suns Postgame Dashboard — Interactive Quotes & Narrative Intelligence</p>
+    <p style="margin-top:10px;">Sources: ESPN · AP Wire · NBA.com · SI.com · ClutchPoints · GOPHNX · ArizonaSports.com · BurnCitySports · EssentiallySports · Bright Side of the Sun · Daily Thunder · Fadeaway World</p>
+    <p style="margin-top:10px;color:#4a4a6a;">Compiled for Ownership · Feb 12, 2026</p>
+  </div>
 </div>
+<script>
+  function toggleCard(element) {
+    const card = element.closest('.card');
+    const content = card.querySelector('.card-content');
+    const icon = card.querySelector('.expand-icon');
+    content.classList.toggle('open');
+    icon.classList.toggle('open');
+  }
+  function showTab(evt, tabName) {
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    const buttons = document.querySelectorAll('.tab-button');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    document.getElementById(tabName).classList.add('active');
+    evt.target.classList.add('active');
+  }
+</script>
 </body>
 </html>
